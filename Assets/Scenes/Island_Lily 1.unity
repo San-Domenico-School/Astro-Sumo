@@ -819,7 +819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4949897879873162193, guid: 1bf6920ae65f54b97abe5214aa94fc16, type: 3}
       propertyPath: scoreValue
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4949897879873162193, guid: 1bf6920ae65f54b97abe5214aa94fc16, type: 3}
       propertyPath: effectColor.b

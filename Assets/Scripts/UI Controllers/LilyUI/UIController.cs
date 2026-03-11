@@ -78,7 +78,7 @@ namespace LLesser
 
         void SwitchScenes()
         {
-            if (levelTime == 0)
+            if (levelTime == 15)
             {
         
                 GlobalEvents.SendSceneIndex();
