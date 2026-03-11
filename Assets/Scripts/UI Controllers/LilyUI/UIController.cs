@@ -21,13 +21,13 @@ namespace LLesser
             var root = uiDocument.rootVisualElement;
 
             teamScoresUI = new Label[]
-            {
-                root.Q<Label>("(9thScore)"),
-                root.Q<Label>("10thScore"),
-                root.Q<Label>("11thScore"),
-                root.Q<Label>("12thScore"),
-            };
-            
+                {
+                    root.Q<Label>("9thScore"),
+                    root.Q<Label>("10thScore"),
+                    root.Q<Label>("11thScore"),
+                    root.Q<Label>("12thScore"),
+                };
+                            
             levelProgress = root.Q<ProgressBar>("LevelTimeRemaining");
             gameProgress = root.Q<ProgressBar>("GameTimeRemaining");
 
@@ -64,7 +64,7 @@ namespace LLesser
                 
                 string teamGrade = (i + 9) + "th Grade";
                 teamScores[i] = GlobalEvents.TeamScores[i];
-                teamScoresUI[i].text = teamGrade + ": " + GlobalEvents.TeamScores[i];
+                teamScoresUI[i].text = teamGrade + ": " + teamScores[i];   
             } 
         }
 
