@@ -15,7 +15,9 @@ namespace ZNijjar.UI
 
         private void Start()
         {
-            VisualElement root = uiDocument.rootVisualElement;
+            // Access UI Document
+        uiDocument = GetComponent<UIDocument>();
+        var root = uiDocument.rootVisualElement;
 
             // Task 2: Query Score Labels
             teamScoresUI = new Label[]

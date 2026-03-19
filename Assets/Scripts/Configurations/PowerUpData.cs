@@ -48,8 +48,8 @@ public class PowerUpData : ScriptableObject
     [Header("Defense")]
         public bool shieldActive = false;         // Absorb one push/knockoff
         public int shieldHitPoints = 0;           // Multi-hit shield
-        public bool invincibility = false;        // Can't be pushed off (short duration)
-        public float respawnTime = 0f;            // Faster respawn if you fall off
+        public bool reverseAttack = false;        // Can't be pushed off (short duration)
+        public bool freezedAttacker = false;      // Faster respawn if you fall off
         public bool anchorMode = false;           // Can't be moved (but can't move either)
 
     [Header("Offense")]
