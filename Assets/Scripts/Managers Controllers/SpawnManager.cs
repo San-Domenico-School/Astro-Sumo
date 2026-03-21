@@ -47,7 +47,8 @@ public class SpawnManager : MonoBehaviour
         {
             int choiceIndex = Random.Range(0, powerups.Length); 
             Vector3 position = SpawnLocation();
-            Instantiate(powerups[choiceIndex], position, transform.rotation); 
+            Quaternion prefabRotation = powerups[choiceIndex].transform.rotation;
+            Instantiate(powerups[choiceIndex], position, prefabRotation); 
         }
     }
     
@@ -59,7 +60,8 @@ public class SpawnManager : MonoBehaviour
         {
             int choiceIndex = Random.Range(0, scoreable.Length); 
             Vector3 position = SpawnLocation();
-            Instantiate(scoreable[choiceIndex], position, transform.rotation); 
+            Quaternion prefabRotation = scoreable[choiceIndex].transform.rotation;
+            Instantiate(scoreable[choiceIndex], position, prefabRotation); 
         }
     }
 
@@ -93,8 +95,8 @@ public class SpawnManager : MonoBehaviour
         // Guarantees that it is on the island
         while (position.magnitude == 0 || position.magnitude > 12.3)
         {
-            float xPos = Random.Range(-11.0f, 11.0f); 
-            float zPos = Random.Range(-11.0f, 11.0f); 
+            float xPos = Random.Range(-26.0f, 26.0f); 
+            float zPos = Random.Range(-13.75f, 6.0f); 
             position = new Vector3(xPos, 0, zPos);
         }
         return position;
