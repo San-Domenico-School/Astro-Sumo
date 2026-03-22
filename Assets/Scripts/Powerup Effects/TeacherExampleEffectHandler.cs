@@ -20,39 +20,5 @@
 using UnityEngine;
 public class TeacherExampleEffectHandler : MonoBehaviour
 {
-private Vector3 originalScale;
-
-    void OnEnable() 
-    {
-        // Subscribe to the global Power-Up events
-        PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-        PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
-    }
-
-    void OnDisable() 
-    {
-        // Unsubscribe to prevent errors when this object is destroyed
-        PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-        PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
-    }
-
-    private void ApplyEffect(PowerUpData data) 
-    {
-        // We only trigger this if the power-up has a specific "fun" color
-        // This prevents the player from stretching for EVERY power-up
-        if (data.powerUpName.Equals("Noodle"))
-        {
-            originalScale = transform.parent.localScale;
-            // Stretch the player vertically like a noodle
-            transform.parent.localScale = data.scale;
-            Debug.Log("Power-Up Applied: I'm a noodle!");
-        }
-    }
-
-    private void RemoveEffect(PowerUpData data) 
-    {
-        transform.parent.localScale = originalScale;
-        Debug.Log("Power-Up Expired: Back to normal size.");
-
-    }
+    //Script removed
 }
