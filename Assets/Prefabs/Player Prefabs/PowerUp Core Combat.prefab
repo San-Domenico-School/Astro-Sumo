@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1457849061078422617}
   m_Layer: 0
-  m_Name: PowerUp Push Mechanics
+  m_Name: PowerUp Core Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
