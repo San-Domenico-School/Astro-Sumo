@@ -23,6 +23,7 @@ public class PowerUpData : ScriptableObject
         public string powerUpName;                // Name of powerup
         public Color colorIndicator;              // Color of light around player indicating powerup
         public float duration;                    // Duration of effect
+        public Vector3 scale;                     // Change in Player size
 
     [Header("Core Combat/Push Mechanics")]
         public float pulseRadius = 0.5f;          // Size of collider on player
