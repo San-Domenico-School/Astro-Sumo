@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Template Scenes/Island_Daniel.unity
     guid: 7dcb8f58f23c34575a1646cb48a7ea1e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Template Scenes/Island_Daniel 1.unity
     guid: 5ceab3d2051ab4686804844b301bee06
+  - enabled: 1
+    path: Assets/Scenes/Template Scenes/Island_Template.unity
+    guid: 17e8f71182a3e40e889a1e7d13807d80
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
