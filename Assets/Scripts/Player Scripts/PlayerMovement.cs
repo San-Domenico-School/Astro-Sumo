@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        Debug.Log(GlobalEvents.TeamScores[0]);
     }
 
     // Callback method triggered by the Player Input component. 

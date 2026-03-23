@@ -48,29 +48,50 @@ public class CollectableController : MonoBehaviour
 
     IEnumerator HandlePickup()
     {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        ParticleSystem particle = GetComponent<ParticleSystem>();
-
         float audioDuration = 0f;
         float particleDuration = 0f;
 
-        if(audioSource != null)
+        // 1. Handle Audio Prefab
+        if (audioEffectPrefab != null)
         {
-            audioSource.Play();
-            audioDuration = audioSource.clip.length;
+            // Create the sound in the scene at the current object's position
+            GameObject audioObj = Instantiate(audioEffectPrefab, transform.position, Quaternion.identity);
+            AudioSource audioSource = audioObj.GetComponent<AudioSource>();
+            
+            if (audioSource != null && audioSource.clip != null)
+            {
+                audioSource.Play();
+                audioDuration = audioSource.clip.length;
+                // Tell the spawned sound to destroy itself after it finishes
+                Destroy(audioObj, audioDuration);
+            }
         }
 
-        if(particle != null)
+        // 2. Handle Particle Prefab
+        if (particleEffectPrefab != null)
         {
-            particle.Play();
-            particleDuration = particle.main.duration;
+            // Create the particles in the scene
+            GameObject particleObj = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+            ParticleSystem particle = particleObj.GetComponent<ParticleSystem>();
+            
+            if (particle != null)
+            {
+                particle.Play();
+                particleDuration = particle.main.duration;
+                // Tell the spawned particles to destroy themselves after they finish
+                Destroy(particleObj, particleDuration);
+            }
         }
 
-        // Calculate the longest wait time based on what actually exists
+        // 3. Cleanup the original Collectable Object
+        // We don't actually need to wait for the sounds/particles here 
+        // because the spawned objects handle their own destruction now.
         float waitTime = Mathf.Max(audioDuration, particleDuration);
 
-        // If both were null, waitTime is 0, and it destroys immediately
+        // 4. Wait
         yield return new WaitForSeconds(waitTime);
+
+        // 5. Final Cleanup (This will always run)
         Destroy(gameObject);
     }
 }
