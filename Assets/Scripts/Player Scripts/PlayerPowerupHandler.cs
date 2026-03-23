@@ -44,7 +44,8 @@ public class PlayerPowerupHandler : MonoBehaviour
                     StartCoroutine(PowerUpRoutine(config.data));
                 }
             }
-            Destroy(other.gameObject);
+            CollectableController collectableController = other.gameObject.GetComponent<CollectableController>();
+            collectableController.DestroyCollectable();
         }
     }
 
