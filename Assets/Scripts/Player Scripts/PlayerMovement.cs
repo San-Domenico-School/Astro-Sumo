@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     // Fields effeced by powerups
     [HideInInspector]
     public float moveMagnitude, linearDamping, appliedForce;
+    [HideInInspector]
+    public bool flipControls;
    
     // Initializes physics references and sets default movement and physics property values.
     void Start()
@@ -51,8 +53,11 @@ public class PlayerMovement : MonoBehaviour
     // regardless of diagonal input directions.
     private void SetMoveDirection(Vector2 value)
     {
-        float right = value.x;
-        float forward = value.y;
+        // Reverses controls if flipControls is true
+        int flip = flipControls ? -1 : 1;
+
+        float right = value.x * flip;
+        float forward = value.y * flip;
         moveDirection = (new Vector3(right, 0, forward)).normalized;
     }
 
