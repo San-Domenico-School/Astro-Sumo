@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRB;
     
     private Vector3 moveDirection;
+    public bool flipDirection {private get; set;}
 
     // Fields effeced by powerups
     [HideInInspector]
@@ -51,8 +52,14 @@ public class PlayerMovement : MonoBehaviour
     // regardless of diagonal input directions.
     private void SetMoveDirection(Vector2 value)
     {
-        float right = value.x;
-        float forward = value.y;
+        int flipDirectionInt = 1;
+        if(flipDirection)
+        {
+            flipDirectionInt = -1;
+        }
+
+        float right = value.x * flipDirectionInt;
+        float forward = value.y * flipDirectionInt;
         moveDirection = (new Vector3(right, 0, forward)).normalized;
     }
 
