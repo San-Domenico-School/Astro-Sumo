@@ -9760,7 +9760,7 @@ GameObject:
   - component: {fileID: 137638535125958091}
   - component: {fileID: -1167856645418884822}
   m_Layer: 0
-  m_Name: AV_Hit1
+  m_Name: AV_Powerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
