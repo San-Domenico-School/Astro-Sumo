@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float moveMagnitude, linearDamping, appliedForce;
     [HideInInspector]
-    public bool flip, freeze; 
+    public bool controlsReversed, isFrozen; 
    
     // Initializes physics references and sets default movement and physics property values.
     void Start()
@@ -54,10 +54,10 @@ public class PlayerMovement : MonoBehaviour
     private void SetMoveDirection(Vector2 value)
     {
         // Causes inputs to flip if flip is true
-        int powerUpInfluence = flip ? -1 : 1;
+        int powerUpInfluence = controlsReversed ? -1 : 1;
 
         // Causes inputs to freeze if freeze is true
-        if(freeze) powerUpInfluence = 0;
+        if(isFrozen)) powerUpInfluence = 0;
 
         float right = value.x * powerUpInfluence;
         float forward = value.y * powerUpInfluence;
