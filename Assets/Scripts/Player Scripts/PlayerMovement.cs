@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         int powerUpInfluence = controlsReversed ? -1 : 1;
 
         // Causes inputs to freeze if freeze is true
-        if(isFrozen)) powerUpInfluence = 0;
+        if(isFrozen) powerUpInfluence = 0;
 
         float right = value.x * powerUpInfluence;
         float forward = value.y * powerUpInfluence;
