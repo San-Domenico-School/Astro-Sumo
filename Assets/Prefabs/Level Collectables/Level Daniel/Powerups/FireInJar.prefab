@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 3979076467414114781}
   - component: {fileID: 42607597208645240}
   - component: {fileID: 2842800695160756914}
+  - component: {fileID: 6122188567418533799}
+  - component: {fileID: 5568734231243870960}
+  - component: {fileID: 205013536776013834}
   m_Layer: 0
   m_Name: FireInJar
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4355918016914258791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.6682222, w: 0.7439618}
-  m_LocalPosition: {x: 2.41368, y: -0, z: 0}
+  m_LocalPosition: {x: -1.92308, y: 5.44976, z: 8.35974}
   m_LocalScale: {x: 125, y: 125, z: 125}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -90,3 +93,54 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6122188567418533799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4355918016914258791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6190d78be3bd345b98a8731f59f26664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectableController
+  timeInScene: 20
+  AVPrefab: {fileID: 0}
+  rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &5568734231243870960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4355918016914258791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
+  data: {fileID: 0}
+--- !u!136 &205013536776013834
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4355918016914258791}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.007
+  m_Height: 0.007836424
+  m_Direction: 1
+  m_Center: {x: -0.0000051073744, y: -0.0000037762811, z: 0.0049970956}
