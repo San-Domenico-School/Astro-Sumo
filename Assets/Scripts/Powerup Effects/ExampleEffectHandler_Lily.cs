@@ -19,7 +19,7 @@
 **********************************************************************/
 using UnityEngine;
 
-public class ExampleEffectHandler : MonoBehaviour
+public class ExampleEffectHandler_Lily : MonoBehaviour
 {
       // Declare fields as needed    
       // Shown only as an example   

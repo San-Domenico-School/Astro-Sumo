@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
   m_Name: lily. PowerUp.Examples.Noodle
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
-  powerUpName: 
+  powerUpName: Noodle
   colorIndicator: {r: 1, g: 0.4009434, b: 0.9944218, a: 0}
-  duration: 0
+  duration: 6
   scale: {x: 0.5, y: 1.5, z: 0.5}
   pulseRadius: 0.5
   massIncrease: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   scoreMultiplier: 1
   loseScore: 0
   collectionRange: 0
-  ghostMode: 0
+  ghostMode: 1
   burn: 0
   anchorMode: 0
   reverseAttack: 0
