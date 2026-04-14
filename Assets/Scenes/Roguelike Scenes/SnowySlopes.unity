@@ -323,11 +323,11 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[0]'
       value: 
-      objectReference: {fileID: 5915725330752514968, guid: 778afb774f7ad4de6984f00fa4ad82b4, type: 3}
+      objectReference: {fileID: 1152004922682392705, guid: 2f3e2afadf0df4b46a9d3c1dd673fdb7, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[1]'
       value: 
-      objectReference: {fileID: 1152004922682392705, guid: 2f3e2afadf0df4b46a9d3c1dd673fdb7, type: 3}
+      objectReference: {fileID: 5915725330752514968, guid: 778afb774f7ad4de6984f00fa4ad82b4, type: 3}
     - target: {fileID: 8358332775311980685, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: m_Name
       value: Managers
