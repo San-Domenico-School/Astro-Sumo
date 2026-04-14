@@ -7,7 +7,7 @@
 * interacting with "Edge" trigger zones.
 * 
 * Bruce Gustin
-* Jan 2, 2026
+* Jan 2, 2026v1.1 Mar 26, 2026v1.2
 *******************************************************************/
 
 using System.Collections;
@@ -20,11 +20,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRB;
     
     private Vector3 moveDirection;
-    public bool flipDirection {private get; set;}
 
     // Fields effeced by powerups
     [HideInInspector]
     public float moveMagnitude, linearDamping, appliedForce;
+    [HideInInspector]
+    public bool controlsReversed, isFrozen; 
    
     // Initializes physics references and sets default movement and physics property values.
     void Start()
@@ -52,14 +53,14 @@ public class PlayerMovement : MonoBehaviour
     // regardless of diagonal input directions.
     private void SetMoveDirection(Vector2 value)
     {
-        int flipDirectionInt = 1;
-        if(flipDirection)
-        {
-            flipDirectionInt = -1;
-        }
+        // Causes inputs to flip if flip is true
+        int powerUpInfluence = controlsReversed ? -1 : 1;
 
-        float right = value.x * flipDirectionInt;
-        float forward = value.y * flipDirectionInt;
+        // Causes inputs to freeze if freeze is true
+        if(isFrozen) powerUpInfluence = 0;
+
+        float right = value.x * powerUpInfluence;
+        float forward = value.y * powerUpInfluence;
         moveDirection = (new Vector3(right, 0, forward)).normalized;
     }
 
