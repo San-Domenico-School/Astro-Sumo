@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour
         iceVFX = GetComponent<ParticleSystem>();
 
         RandomizeSizeAndMass();
-        FindNearestPlayer();
+        InvokeRepeating("FindNearestPlayer", 0, .25f);
         InvokeRepeating("Melt", 1, 0.5f);
     }
 
@@ -42,28 +42,6 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
        FollowNearestPlayer();
-    }
-
-    // Scans the scene for all Players at the moment of spawning. Identifies and
-    // stores the closest player as the permanent target for this enemy's lifespan.
-    void FindNearestPlayer()
-    {
-        PlayerMovement[] players = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
-        float closestDistance = Mathf.Infinity;
-        Transform closestPlayer = null;
-
-        foreach (PlayerMovement playerComponent in players)
-        {
-            GameObject player = playerComponent.gameObject;
-            float distance = Vector3.Distance(transform.position, player.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestPlayer = player.transform;
-            }
-        }
-
-        targetPlayer = closestPlayer;
     }
 
     // Translates the enemy position toward the targetPlayer's current 
@@ -108,5 +86,27 @@ public class EnemyController : MonoBehaviour
         transform.localScale *= reductionEachRepeat;
         iceRB.mass *= reductionEachRepeat;
         Dissolution();
+    }
+
+        // Scans the scene for all Players at the moment of spawning. Identifies and
+    // stores the closest player as the permanent target for this enemy's lifespan.
+    void FindNearestPlayer()
+    {
+        PlayerMovement[] players = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+        float closestDistance = Mathf.Infinity;
+        Transform closestPlayer = null;
+
+        foreach (PlayerMovement playerComponent in players)
+        {
+            GameObject player = playerComponent.gameObject;
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestPlayer = player.transform;
+            }
+        }
+
+        targetPlayer = closestPlayer;
     }
 }
