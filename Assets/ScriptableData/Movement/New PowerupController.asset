@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
   m_Name: New PowerupController
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
-  powerUpName: 
-  colorIndicator: {r: 0.3873129, g: 0, b: 1, a: 0}
-  duration: 0
+  powerUpName: Noodle
+  colorIndicator: {r: 1, g: 0, b: 0.3260274, a: 0}
+  duration: 3
   scale: {x: 0.5, y: 1.5, z: 0.5}
   pulseRadius: 0.5
   massIncrease: 0

@@ -191,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[0]'
       value: 
-      objectReference: {fileID: 5783494498192920509, guid: 85d2d148dc6f549c2bbc4176ecc21f18, type: 3}
+      objectReference: {fileID: 5783494498192920509, guid: f778ee3779f7849aeb562cec91be12e7, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[0]'
       value: 
