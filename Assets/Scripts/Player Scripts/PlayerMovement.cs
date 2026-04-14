@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         moveMagnitude = 250;
         linearDamping = 0.5f;
-        appliedForce = 2;
+        appliedForce = 4;
         playerRB.AddForce(Random.onUnitSphere * moveMagnitude, ForceMode.Force);
     }
 
