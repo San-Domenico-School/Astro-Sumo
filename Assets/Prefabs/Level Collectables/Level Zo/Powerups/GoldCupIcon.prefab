@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2956999288195884736}
   - component: {fileID: 7850425092084116635}
   - component: {fileID: -1056370785965983494}
+  - component: {fileID: 3969787555644247284}
   m_Layer: 0
   m_Name: GoldCupIcon
   m_TagString: PowerUp
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -140,4 +141,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
   timeInScene: 3
+  AVPrefab: {fileID: 0}
   rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &3969787555644247284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0541df7a49a304fd2b4779826eb7758d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseCollectible
+  scoreValue: 10
+  collectSound: {fileID: 8300000, guid: fbcc1d4bfe5d544b88d860133a06d74e, type: 3}
+  collectEffect: {fileID: 0}
