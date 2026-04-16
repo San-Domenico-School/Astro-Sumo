@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9191709283118591066}
   - component: {fileID: 511392074517413276}
   - component: {fileID: 6707086951580739727}
-  - component: {fileID: 4276959933160503564}
+  - component: {fileID: -3766026509468250551}
   m_Layer: 0
   m_Name: MultiplierIcon 1
   m_TagString: PowerUp
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
-  data: {fileID: 11400000, guid: 576141ebb2cfd42be89718cfd5301c39, type: 2}
+  data: {fileID: 11400000, guid: eaa9fb563512a416db8c34d4e8fb714c, type: 2}
 --- !u!114 &6707086951580739727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
   timeInScene: 12.68
-  AVPrefab: {fileID: 0}
+  AVPrefab: {fileID: 5535841037948806708, guid: 1c56f372cd06a48878857f71c03de22c, type: 3}
   rotation: {x: 0, y: 90, z: 0}
---- !u!114 &4276959933160503564
+--- !u!114 &-3766026509468250551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,11 +152,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9067531689638972524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fe91608034b64879ba24aaafe8ffbbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cb1eea7259a2403ca6de865a78d7978, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MassAndSizePowerUp
-  massMultiplier: 3
-  sizeMultiplier: 2
-  powerUpDuration: 20
-  itemExpiraton: 20
-  rotationSpeed: 100
+  m_EditorClassIdentifier: Assembly-CSharp::MassAndSizeEffectHandler
+  powerUpMass: 5
+  powerUpScale: {x: 2, y: 2, z: 2}
