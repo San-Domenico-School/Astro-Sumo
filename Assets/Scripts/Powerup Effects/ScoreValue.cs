@@ -1,37 +1,49 @@
+/**********************************************************************
+* Effect Handler — attached to PowerUp Scoring child prefab on Player
+*
+* Listens for the OnPowerUpApplied event. When a "Score Value" power-up
+* is picked up, instantly awards its scoreValue points to the player's
+* team. No revert is needed because the effect is a one-time grant.
+*
+* PowerUpData asset setup:
+*   powerUpName  → "Score Value"
+*   scoreValue   → desired point amount (e.g. 10)
+*   duration     → any value (effect is instant; timer is ignored)
+*
+* Zo Nijjar
+* April 2026
+**********************************************************************/
 using UnityEngine;
 
-public class BaseCollectible : MonoBehaviour
+public class ScoreValue : MonoBehaviour
 {
-    [Header("Score Settings")]
-    public int scoreValue = 10;
+    private PlayerScoreHandler scoreHandler;
 
-    [Header("Effects")]
-    public AudioClip collectSound;
-    public GameObject collectEffect;
-
-    private void OnTriggerEnter(Collider other)
+    void Awake()
     {
-        if (!other.CompareTag("Player")) return;
-
-        // Grab score manager and apply score
-        ScoreManager scoreManager = FindAnyObjectByType<ScoreManager>();
-        if (scoreManager != null)
-        {
-            scoreManager.AddScore(scoreValue);
-        }
-
-        // Visual effect
-        if (collectEffect != null)
-        {
-            Instantiate(collectEffect, transform.position, Quaternion.identity);
-        }
-
-        // Audio effect
-        if (collectSound != null)
-        {
-            AudioSource.PlayClipAtPoint(collectSound, transform.position);
-        }
-
-        Destroy(gameObject);
+        scoreHandler = GetComponentInParent<PlayerScoreHandler>();
     }
+
+    void OnEnable()
+    {
+        PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
+        PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+    }
+
+    void OnDisable()
+    {
+        PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
+        PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+    }
+
+    private void ApplyEffect(PowerUpData data)
+    {
+        if (data.powerUpName.Equals("Score Value") && data.scoreValue > 0 && scoreHandler != null)
+        {
+            scoreHandler.AddScore(data.scoreValue);
+            Debug.Log($"Power-Up Applied: +{data.scoreValue} points!");
+        }
+    }
+
+    private void RemoveEffect(PowerUpData data) { }
 }

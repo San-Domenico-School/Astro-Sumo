@@ -124,6 +124,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4841026561287457424, guid: 2023f832bd7544003901d14817adce02, type: 3}
   m_PrefabInstance: {fileID: 659476251}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5171326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ae56191e4ecf4ff387771bcad2f3059, type: 3}
+  m_PrefabInstance: {fileID: 2056178106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5171330
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171326}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.008615608, y: 0.0017004198, z: 0.00866776}
+  m_Center: {x: -0.000057564812, y: 0.000022489983, z: 0.0043414393}
+--- !u!114 &5171331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6190d78be3bd345b98a8731f59f26664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectableController
+  timeInScene: 3
+  AVPrefab: {fileID: 0}
+  rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &5171332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
+  data: {fileID: 11400000, guid: 9058259f1acb546cbaf7dc733496b03e, type: 2}
 --- !u!1001 &108901123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,6 +325,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 83e3d5d808d9f44e4b7e4cf21f11179b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1845016498}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 83e3d5d808d9f44e4b7e4cf21f11179b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1845016503}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 83e3d5d808d9f44e4b7e4cf21f11179b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1845016502}
   m_SourcePrefab: {fileID: 100100000, guid: 83e3d5d808d9f44e4b7e4cf21f11179b, type: 3}
 --- !u!1001 &520663344
 PrefabInstance:
@@ -330,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerups.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: scoreable.Array.size
@@ -343,7 +403,15 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[1]'
       value: 
-      objectReference: {fileID: 1156714409}
+      objectReference: {fileID: 173560, guid: c0d9655eee5df425abfe2d60a5315d37, type: 3}
+    - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+      propertyPath: 'powerups.Array.data[2]'
+      value: 
+      objectReference: {fileID: 178452, guid: 40fa76c05108949528401fc0a36b663e, type: 3}
+    - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+      propertyPath: 'powerups.Array.data[3]'
+      value: 
+      objectReference: {fileID: 192068, guid: 840324f13ca284f3c9f73ca822f7e3a7, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[0]'
       value: 
@@ -541,9 +609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0541df7a49a304fd2b4779826eb7758d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseCollectible
-  scoreValue: 10
-  collectSound: {fileID: 0}
-  collectEffect: {fileID: 0}
 --- !u!1001 &1318790654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,6 +910,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.008248839, y: 0.0017689598, z: 0.008552318}
   m_Center: {x: 0.0017445098, y: -0.00059342996, z: 0.0048829494}
+--- !u!114 &1845016502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845016494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6190d78be3bd345b98a8731f59f26664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectableController
+  timeInScene: 0
+  AVPrefab: {fileID: 0}
+  rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &1845016503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845016494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
+  data: {fileID: 0}
 --- !u!1 &2010620344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,10 +1242,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: CollectionRange
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6ae56191e4ecf4ff387771bcad2f3059, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ae56191e4ecf4ff387771bcad2f3059, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5171332}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ae56191e4ecf4ff387771bcad2f3059, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5171331}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ae56191e4ecf4ff387771bcad2f3059, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5171330}
   m_SourcePrefab: {fileID: 100100000, guid: 6ae56191e4ecf4ff387771bcad2f3059, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
