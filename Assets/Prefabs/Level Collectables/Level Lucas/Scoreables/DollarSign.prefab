@@ -4946,4 +4946,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
   timeInScene: 7.1
+  AVPrefab: {fileID: 0}
   rotation: {x: 0, y: 0, z: 0}

@@ -3,35 +3,39 @@ using System.Collections;
 
 public class FreezePowerUp : MonoBehaviour
 {
-    public float freezeDuration = 3f;
+    // Removed: private Vector3 originalScale;
+    private PlayerMovement playerMovement;
+    private PlayerMovement[] allPlayers;
 
-    private void OnTriggerEnter(Collider other)
+    void Awake()
     {
-        PlayerMovement snagger = other.GetComponent<PlayerMovement>();
+        playerMovement = GetComponentInParent<PlayerMovement>();
+    }
 
-        if (snagger != null)
+    private void ApplyEffect(PowerUpData data)
+    {
+        // This prevents the player from stretching for EVERY power-up
+        if (data.powerUpName.Equals("FreezeAll"))
         {
-            // Hide the powerup so it looks picked up
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
-
-            PlayerMovement[] allPlayers = Object.FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
-
-            foreach (PlayerMovement p in allPlayers)
+            allPlayers = Object.FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+            // This loop freezes all player controls (including yours)
+            foreach (PlayerMovement player in allPlayers)
             {
-                if (p != snagger) StartCoroutine(TempFreeze(p));
+                player.isFrozen = data.freezeNearbyPlayers;
+                Debug.Log("Power-Up Applied: Opponents frozen");
             }
 
-            Debug.Log(snagger.name + " froze everyone else!");
-            // Destroy after the longest possible duration
-            Destroy(gameObject, freezeDuration + 0.1f);
+            // This unfreezes your controls
+            playerMovement.isFrozen = !data.freezeNearbyPlayers;
         }
     }
 
-    IEnumerator TempFreeze(PlayerMovement p)
+    private void RemoveEffect(PowerUpData data)
     {
-        p.isFrozen = true;
-        yield return new WaitForSeconds(freezeDuration);
-        p.isFrozen = false;
+        foreach (PlayerMovement player in allPlayers)
+        {
+            player.isFrozen = !data.freezeNearbyPlayers;
+            Debug.Log("Power-Up Removed: Opponents freed");
+        }
     }
 }

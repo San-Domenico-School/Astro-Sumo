@@ -3,28 +3,25 @@ using System.Collections;
 
 public class SelfReversePowerUp : MonoBehaviour
 {
-    public float duration = 5f;
+    private PlayerMovement playerMovement;
 
-    private void OnTriggerEnter(Collider other)
+    void Awake()
     {
-        PlayerMovement snagger = other.GetComponent<PlayerMovement>();
+        playerMovement = GetComponentInParent<PlayerMovement>();
+    }
 
-        if (snagger != null)
+    private void ApplyEffect(PowerUpData data)
+    {
+        if (data.powerUpName.Equals("SelfReverse"))
         {
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
-
-            StartCoroutine(TempReverse(snagger));
-
-            Debug.Log(snagger.name + " reversed their own controls!");
-            Destroy(gameObject, duration + 0.1f);
+            playerMovement.controlsReversed = true;
+            Debug.Log("Power-Up Applied: Your controls reversed");
         }
     }
 
-    IEnumerator TempReverse(PlayerMovement p)
+    private void RemoveEffect(PowerUpData data)
     {
-        p.controlsReversed = true;
-        yield return new WaitForSeconds(duration);
-        p.controlsReversed = false;
+        playerMovement.controlsReversed = false;
+        Debug.Log("Power-Up Removed: Your controls restored");
     }
 }

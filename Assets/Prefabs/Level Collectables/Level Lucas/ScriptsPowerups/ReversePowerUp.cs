@@ -1,35 +1,37 @@
 using UnityEngine;
-using System.Collections;
 
 public class ReversePowerUp : MonoBehaviour
 {
-    public float duration = 5f;
+    private PlayerMovement playerMovement;
+    private PlayerMovement[] allPlayers;
 
-    private void OnTriggerEnter(Collider other)
+    void Awake()
     {
-        PlayerMovement snagger = other.GetComponent<PlayerMovement>();
+        playerMovement = GetComponentInParent<PlayerMovement>();
+    }
 
-        if (snagger != null)
+    private void ApplyEffect(PowerUpData data)
+    {
+        if (data.powerUpName.Equals("ReverseAll"))
         {
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
-
-            PlayerMovement[] allPlayers = Object.FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
-
-            foreach (PlayerMovement p in allPlayers)
+            allPlayers = Object.FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+            foreach (PlayerMovement player in allPlayers)
             {
-                if (p != snagger) StartCoroutine(TempReverse(p));
+                player.controlsReversed = data.reverseControls;
+                Debug.Log("Power-Up Applied: Opponents reversed");
             }
 
-            Debug.Log(snagger.name + " reversed everyone else!");
-            Destroy(gameObject, duration + 0.1f);
+            // Un-reverses your own controls
+            playerMovement.controlsReversed = !data.reverseControls;
         }
     }
 
-    IEnumerator TempReverse(PlayerMovement p)
+    private void RemoveEffect(PowerUpData data)
     {
-        p.controlsReversed = true;
-        yield return new WaitForSeconds(duration);
-        p.controlsReversed = false;
+        foreach (PlayerMovement player in allPlayers)
+        {
+            player.controlsReversed = !data.reverseControls;
+            Debug.Log("Power-Up Removed: Opponents un-reversed");
+        }
     }
 }

@@ -1,37 +1,39 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class SlowPowerUp : MonoBehaviour
 {
-    public float duration = 5f;
-    [Range(0, 1)] public float speedMultiplier = 0.4f;
+    private PlayerMovement playerMovement;
+    private PlayerMovement[] allPlayers;
 
-    private void OnTriggerEnter(Collider other)
+    void Awake()
     {
-        PlayerMovement snagger = other.GetComponent<PlayerMovement>();
+        playerMovement = GetComponentInParent<PlayerMovement>();
+    }
 
-        if (snagger != null)
+    private void ApplyEffect(PowerUpData data)
+    {
+        if (data.powerUpName.Equals("SlowAll"))
         {
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
-
-            PlayerMovement[] allPlayers = Object.FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
-
-            foreach (PlayerMovement p in allPlayers)
+            allPlayers = Object.FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+            foreach (PlayerMovement player in allPlayers)
             {
-                if (p != snagger) StartCoroutine(TempSlow(p));
+                player.moveMagnitude *= data.speedMultiplier;
+                Debug.Log("Power-Up Applied: Opponents slowed");
             }
 
-            Debug.Log(snagger.name + " slowed everyone else!");
-            Destroy(gameObject, duration + 0.1f);
+            // This un-slows your own controls
+            playerMovement.moveMagnitude /= data.speedMultiplier;
         }
     }
 
-    IEnumerator TempSlow(PlayerMovement p)
+    private void RemoveEffect(PowerUpData data)
     {
-        float originalSpeed = p.moveMagnitude;
-        p.moveMagnitude *= speedMultiplier;
-        yield return new WaitForSeconds(duration);
-        p.moveMagnitude = originalSpeed;
+        foreach (PlayerMovement player in allPlayers)
+        {
+            player.moveMagnitude /= data.speedMultiplier;
+            Debug.Log("Power-Up Removed: Opponents un-slowed");
+        }
     }
 }
