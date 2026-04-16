@@ -10,6 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3159639084369920462}
   - component: {fileID: -6627742195916654007}
+  - component: {fileID: 3714970193273133458}
+  - component: {fileID: -2566295487120773281}
+  - component: {fileID: 687793574427214000}
+  - component: {fileID: -7571347844882820285}
+  - component: {fileID: -3615556561511751411}
   m_Layer: 0
   m_Name: PowerUp Movement
   m_TagString: Untagged
@@ -44,3 +49,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15c4adf95be34b2ca3b0b9a40942b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExampleEffectHandler_Sufian
+--- !u!135 &3714970193273133458
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634154740283187311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2566295487120773281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634154740283187311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d96be984d5e74c078d04652b2d70cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SizeIncreaseEffectHandler
+--- !u!114 &687793574427214000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634154740283187311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1904d8a4de94459b8755a1bfe4f54d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedMultiplierEffectHandler
+--- !u!114 &-7571347844882820285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634154740283187311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492b60908669e405386dafa9d7426997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StunEffectHandler
+--- !u!114 &-3615556561511751411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634154740283187311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c8c44c3cf164807877a5d51110518b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleportToCenterEffectHandler

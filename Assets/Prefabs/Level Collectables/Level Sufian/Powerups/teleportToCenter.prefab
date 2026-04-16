@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2540878631483501151}
   - component: {fileID: -6806351174040411350}
   m_Layer: 0
-  m_Name: teleportToCenter
+  m_Name: TeleportToCenter
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
