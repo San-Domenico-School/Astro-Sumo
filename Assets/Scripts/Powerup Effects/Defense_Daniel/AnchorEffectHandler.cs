@@ -3,14 +3,16 @@ using UnityEngine;
 public class AnchorEffectHandler : MonoBehaviour
 {
       // Declare fields as needed    
-      // Shown only as an example   
-private Vector3 originalScale;        		
+      // Shown only as an example     
+      private PlayerMovement playerMovement;		
 
 // Needed if you need to grab additional components from the player
 // such as the rigidbody shown
 void Awake()
 {
-	originalScale = GetComponentInParent<Transform>().localScale;
+	
+playerMovement = GetComponentInParent<PlayerMovement>();
+
 }
 
 // Called when this object becomes enabled and active
@@ -34,20 +36,16 @@ PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
 private void ApplyEffect(PowerUpData data) 
       {
           // This prevents the player from stretching for EVERY power-up
-          if (data.powerUpName.Equals("Noodle"))
+          if (data.powerUpName.Equals("Anchor"))
           {
-              // Grabs the new scale from the PowerUpData file
-              // and applies it to the parent object
-              transform.parent.localScale = data.scale;
-              Debug.Log("Power-Up Applied: I'm a noodle!");
+              
+             playerMovement.isFrozen = data.anchorMode;
           }
       }
 
 // Is called when the effect ends
       private void RemoveEffect(PowerUpData data) 
       {
-          // Sets the scale back to where it was
-          transform.parent.localScale = originalScale;
-          Debug.Log("Power-Up Expired: Back to normal size.");
+          playerMovement.isFrozen = !data.anchorMode;
       }
 }
