@@ -319,6 +319,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+      propertyPath: maxWave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerupRate
       value: 12
       objectReference: {fileID: 0}
@@ -341,11 +345,15 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[0]'
       value: 
-      objectReference: {fileID: 5783494498192920509, guid: ad8cb954e4ccb4472adc005e509d97eb, type: 3}
+      objectReference: {fileID: 9067531689638972524, guid: 7915959e2fc9b4741b0a1459b410a3ea, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[1]'
       value: 
-      objectReference: {fileID: 9067531689638972524, guid: 7915959e2fc9b4741b0a1459b410a3ea, type: 3}
+      objectReference: {fileID: 135134, guid: 0eeeb7efcf3ce4725b442780e45219bc, type: 3}
+    - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+      propertyPath: 'powerups.Array.data[2]'
+      value: 
+      objectReference: {fileID: 135134, guid: 0eeeb7efcf3ce4725b442780e45219bc, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[0]'
       value: 

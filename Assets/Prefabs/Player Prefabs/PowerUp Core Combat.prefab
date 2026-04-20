@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1457849061078422617}
   - component: {fileID: 593324650143958291}
   - component: {fileID: 4393851543552105730}
+  - component: {fileID: -3466213385642198026}
   m_Layer: 0
   m_Name: PowerUp Core Combat
   m_TagString: Untagged
@@ -66,3 +67,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333006c7c67ca4a18a58b268e60f3da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MassIncreaseEventHandler
+--- !u!114 &-3466213385642198026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613284328911920407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722927ff0138b47429dd7ae3841a4556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MassDecrease

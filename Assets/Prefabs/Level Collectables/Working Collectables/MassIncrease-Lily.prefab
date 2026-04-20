@@ -14,14 +14,14 @@ GameObject:
   - component: {fileID: 9191709283118591066}
   - component: {fileID: 511392074517413276}
   - component: {fileID: 6707086951580739727}
-  - component: {fileID: -3766026509468250551}
+  - component: {fileID: -5745763821160970519}
   m_Layer: 0
   m_Name: MassIncrease-Lily
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7076324922537805081
 Transform:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   timeInScene: 12.68
   AVPrefab: {fileID: 5535841037948806708, guid: 1c56f372cd06a48878857f71c03de22c, type: 3}
   rotation: {x: 0, y: 90, z: 0}
---- !u!114 &-3766026509468250551
+--- !u!114 &-5745763821160970519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,8 +152,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9067531689638972524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cb1eea7259a2403ca6de865a78d7978, type: 3}
+  m_Script: {fileID: 11500000, guid: 333006c7c67ca4a18a58b268e60f3da4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MassAndSizeEffectHandler
-  powerUpMass: 5
-  powerUpScale: {x: 2, y: 2, z: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::MassIncreaseEventHandler
