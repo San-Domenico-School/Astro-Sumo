@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
   m_Name: PowerUp.Movement.TeleportToCenter
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
-  powerUpName: 
-  colorIndicator: {r: 0, g: 0, b: 0, a: 0}
+  powerUpName: Teleport To Center
+  colorIndicator: {r: 0.17454815, g: 1, b: 0, a: 0}
   duration: 0
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 0.5
@@ -23,7 +23,7 @@ MonoBehaviour:
   speedMultiplier: 1
   stun: 1
   sizeIncreaseMultiplier: 1
-  teleportToCenter: 0
+  teleportToCenter: 1
   scoreValue: 0
   scoreMultiplier: 1
   loseScore: 0

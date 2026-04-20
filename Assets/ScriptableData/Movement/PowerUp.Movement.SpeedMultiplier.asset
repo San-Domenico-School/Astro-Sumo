@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
   m_Name: PowerUp.Movement.SpeedMultiplier
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
-  powerUpName: 
-  colorIndicator: {r: 0, g: 0, b: 0, a: 0}
-  duration: 0
+  powerUpName: Speed Multiplier
+  colorIndicator: {r: 1, g: 0, b: 0.08150673, a: 0}
+  duration: 5
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 0.5
   massIncrease: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
   ghostMode: 0
   burn: 0
   anchorMode: 0
-  reverseAttack: 0
+  reverseAttack: -4
   freezeNearbyPlayers: 0
   slowAll: 0
   reverseControls: 0
