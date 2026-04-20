@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4ece78d2df5d9490bb3eb7a9b01f895a, type: 3}
       propertyPath: m_Name
-      value: Lightning
+      value: SpeedMultiplier
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
   timeInScene: 3
-  AVPrefab: {fileID: 0}
+  AVPrefab: {fileID: 5535841037948806708, guid: 1c56f372cd06a48878857f71c03de22c, type: 3}
   rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &2590322509149079787
 MonoBehaviour:
@@ -131,4 +131,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: eaad77ed96f254f6eb5192a5a9d208f7, type: 2}

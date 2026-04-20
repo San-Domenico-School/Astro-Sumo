@@ -36,16 +36,16 @@ public class SizeIncreaseEffectHandler : MonoBehaviour
     // We subscribe to the global power-up events here
     void OnEnable()
     {
-    PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-    PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+        PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
+        PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
     }
 
     // Called when this object is disabled or destroyed
     // We must unsubscribe to prevent errors and unwanted behavior
     void OnDisable()
     {
-    PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-    PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+        PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
+        PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
     }
 
     // Is called when the effect begins
@@ -53,12 +53,11 @@ public class SizeIncreaseEffectHandler : MonoBehaviour
     private void ApplyEffect(PowerUpData data) 
         {
             // This prevents the player from stretching for EVERY power-up
-            if (data.powerUpName.Equals("Noodle"))
+            if (data.powerUpName.Equals("Size Increase"))
             {
                 // Grabs the new scale from the PowerUpData file
                 // and applies it to the parent object
                 transform.parent.localScale = data.scale;
-                Debug.Log("Power-Up Applied: I'm a noodle!");
             }
         }
 
