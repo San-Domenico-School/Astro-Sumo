@@ -14,9 +14,6 @@ GameObject:
   - component: {fileID: 6048496270939369548}
   - component: {fileID: 3537887703603063200}
   - component: {fileID: 7153456234410208639}
-  - component: {fileID: 1252787433364080301}
-  - component: {fileID: 3088639521615193206}
-  - component: {fileID: 4097946235186406413}
   m_Layer: 0
   m_Name: ScoreValue
   m_TagString: PowerUp
@@ -145,39 +142,3 @@ MonoBehaviour:
   timeInScene: 10
   AVPrefab: {fileID: 0}
   rotation: {x: 0, y: 0, z: 0}
---- !u!114 &1252787433364080301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6085071540223561089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0541df7a49a304fd2b4779826eb7758d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseCollectible
---- !u!114 &3088639521615193206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6085071540223561089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0541df7a49a304fd2b4779826eb7758d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseCollectible
---- !u!114 &4097946235186406413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6085071540223561089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a368ff8fc1dc47aaa7c8c453c6b5f6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExampleEffectHandler_zo

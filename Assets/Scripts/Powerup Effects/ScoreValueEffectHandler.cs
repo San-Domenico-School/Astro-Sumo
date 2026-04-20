@@ -1,21 +1,6 @@
-/**********************************************************************
-* Effect Handler — attached to PowerUp Scoring child prefab on Player
-*
-* Listens for the OnPowerUpApplied event. When a "Score Value" power-up
-* is picked up, instantly awards its scoreValue points to the player's
-* team. No revert is needed because the effect is a one-time grant.
-*
-* PowerUpData asset setup:
-*   powerUpName  → "Score Value"
-*   scoreValue   → desired point amount (e.g. 10)
-*   duration     → any value (effect is instant; timer is ignored)
-*
-* Zo Nijjar
-* April 2026
-**********************************************************************/
 using UnityEngine;
 
-public class ScoreValue : MonoBehaviour
+public class ScoreValueEffectHandler : MonoBehaviour
 {
     private PlayerScoreHandler scoreHandler;
 
@@ -47,3 +32,4 @@ public class ScoreValue : MonoBehaviour
 
     private void RemoveEffect(PowerUpData data) { }
 }
+

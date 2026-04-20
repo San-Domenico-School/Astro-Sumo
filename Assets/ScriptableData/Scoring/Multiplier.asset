@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Multiplier
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
   powerUpName: Muiltiplier
-  colorIndicator: {r: 0, g: 0, b: 0, a: 0}
+  colorIndicator: {r: 1, g: 0.41492444, b: 0, a: 0}
   duration: 0
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 0.5

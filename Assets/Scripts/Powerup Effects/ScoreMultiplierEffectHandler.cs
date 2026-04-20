@@ -1,21 +1,6 @@
-/**********************************************************************
-* Effect Handler — attached to PowerUp Scoring child prefab on Player
-*
-* Listens for power-up events and temporarily multiplies all points
-* earned from scoreables by data.scoreMultiplier for data.duration
-* seconds, then resets the multiplier back to 1.
-*
-* PowerUpData asset setup:
-*   powerUpName     → "Score Multiplier"
-*   scoreMultiplier → desired multiplier (e.g. 2.0 for double points)
-*   duration        → active time in seconds (e.g. 30)
-*
-* Zo Nijjar
-* April 2026
-**********************************************************************/
 using UnityEngine;
 
-public class ScoreMultiplier_zo : MonoBehaviour
+public class ScoreMultiplierEffectHandler : MonoBehaviour
 {
     private PlayerScoreHandler scoreHandler;
 
@@ -54,3 +39,4 @@ public class ScoreMultiplier_zo : MonoBehaviour
         }
     }
 }
+

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CollectionRange
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
   powerUpName: CollectionRange
-  colorIndicator: {r: 0, g: 0, b: 0, a: 0}
+  colorIndicator: {r: 0.17225882, g: 0.388176, b: 0.745283, a: 0}
   duration: 0
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 0.5

@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6960100528088043494}
-  - component: {fileID: -396605966267282085}
+  - component: {fileID: 3811025703864740463}
+  - component: {fileID: -3944292061197857418}
   m_Layer: 0
   m_Name: PowerUp Scoring
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-396605966267282085
+--- !u!114 &3811025703864740463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,6 +42,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2205592066889563990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a368ff8fc1dc47aaa7c8c453c6b5f6b, type: 3}
+  m_Script: {fileID: 11500000, guid: e13e793e7674d4b49959d6f05ae0b5c2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExampleEffectHandler
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreValueEffectHandler
+--- !u!114 &-3944292061197857418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205592066889563990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2a9615642584fc99abb57b9ea19b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreMultiplierEffectHandler
