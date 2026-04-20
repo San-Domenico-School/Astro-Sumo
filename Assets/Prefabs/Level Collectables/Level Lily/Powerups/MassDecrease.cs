@@ -19,7 +19,7 @@
 **********************************************************************/
 using UnityEngine;
 
-public class MassIncreaseEventHandler : MonoBehaviour
+public class MassDecrease : MonoBehaviour
 {
       // Declare fields as needed    
       // Shown only as an example   
@@ -57,7 +57,7 @@ PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
 private void ApplyEffect(PowerUpData data) 
       {
           // This prevents the player from stretching for EVERY power-up
-          if (data.powerUpName.Equals("MassIncrease"))
+          if (data.powerUpName.Equals("MassDecrease"))
           {
               // Grabs the new scale from the PowerUpData file
               // and applies it to the parent object

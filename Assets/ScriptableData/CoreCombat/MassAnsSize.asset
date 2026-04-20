@@ -17,7 +17,7 @@ MonoBehaviour:
   duration: 10
   scale: {x: 2, y: 2, z: 2}
   pulseRadius: 0.5
-  massIncrease: 10
+  massIncrease: 3
   massDecrease: 0
   pushRange: 0
   speedMultiplier: 1.03

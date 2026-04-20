@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1457849061078422617}
   - component: {fileID: 593324650143958291}
-  - component: {fileID: 7988223578273375135}
+  - component: {fileID: 4393851543552105730}
   m_Layer: 0
   m_Name: PowerUp Core Combat
   m_TagString: Untagged
@@ -54,7 +54,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7988223578273375135
+--- !u!114 &4393851543552105730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,6 +63,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4613284328911920407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f964b222ce145ee808399ca3d26207, type: 3}
+  m_Script: {fileID: 11500000, guid: 333006c7c67ca4a18a58b268e60f3da4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExampleEffectHandler
+  m_EditorClassIdentifier: Assembly-CSharp::MassIncreaseEventHandler
