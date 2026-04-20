@@ -68,11 +68,15 @@ public class PlayerMovement : MonoBehaviour
     // Also handles destruction of the player if they fall below the map threshold.
     private void Move()
     {
-            playerRB.AddForce(moveDirection * moveMagnitude * Time.deltaTime);
-            if(transform.position.y < -10)
-            {
-                Destroy(gameObject);
-            }
+        // anchors player
+        playerRB.linearDamping = isFrozen ? 1000 : linearDamping;
+
+        //Adds force to player
+        playerRB.AddForce(moveDirection * moveMagnitude * Time.deltaTime);
+        if(transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Detects collisions with other players to calculate and apply 
