@@ -40,7 +40,7 @@ public class ScoreValue : MonoBehaviour
     {
         if (data.powerUpName.Equals("Score Value") && data.scoreValue > 0 && scoreHandler != null)
         {
-            scoreHandler.AddScore(data.scoreValue);
+            scoreHandler.AddScore((int)(data.scoreValue * scoreHandler.scoreMultiplier));
             Debug.Log($"Power-Up Applied: +{data.scoreValue} points!");
         }
     }
