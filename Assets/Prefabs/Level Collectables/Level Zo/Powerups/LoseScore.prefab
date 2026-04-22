@@ -14,10 +14,8 @@ GameObject:
   - component: {fileID: 8609055969501523624}
   - component: {fileID: 4686536104258375590}
   - component: {fileID: 2127285714959023607}
-  - component: {fileID: 3296445290912860722}
-  - component: {fileID: 2197233498481241494}
   m_Layer: 0
-  m_Name: RadiationIcon
+  m_Name: LoseScore
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 74c5eefd2b7dd4e6d9c3c24886fb2a45, type: 2}
 --- !u!114 &2127285714959023607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,27 +142,3 @@ MonoBehaviour:
   timeInScene: 10
   AVPrefab: {fileID: 0}
   rotation: {x: 0, y: 0, z: 0}
---- !u!114 &3296445290912860722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0cf45a86c764bb193d5ba0144dc37c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseScore
---- !u!114 &2197233498481241494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a368ff8fc1dc47aaa7c8c453c6b5f6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExampleEffectHandler_zo

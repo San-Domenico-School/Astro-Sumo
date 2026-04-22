@@ -1,21 +1,6 @@
-/**********************************************************************
-* Effect Handler — attached to PowerUp Scoring child prefab on Player
-*
-* Listens for the OnPowerUpApplied event. When a "Lose Score" item is
-* picked up, instantly deducts data.loseScore points from the player's
-* team score. Score is clamped so it cannot drop below zero.
-*
-* PowerUpData asset setup:
-*   powerUpName → "Lose Score"
-*   loseScore   → points to deduct (e.g. 20)
-*   duration    → any value (effect is instant; timer is ignored)
-*
-* Zo Nijjar
-* April 2026
-**********************************************************************/
 using UnityEngine;
 
-public class LoseScore : MonoBehaviour
+public class LosescoreeffectsHandler : MonoBehaviour
 {
     private PlayerScoreHandler scoreHandler;
 
