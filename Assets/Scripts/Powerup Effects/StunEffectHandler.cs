@@ -65,6 +65,10 @@ public class StunEffectHandler : MonoBehaviour
     // Is called when the effect ends
         private void RemoveEffect(PowerUpData data) 
         {
-           playerMovement.moveMagnitude = originalMoveMagnitude;
+           playerMovement.moveMagnitude = 250;
+           Debug.Log("Stun Expired");
         }
 }
+/*
+
+*/
