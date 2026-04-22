@@ -53,20 +53,19 @@ PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
 private void ApplyEffect(PowerUpData data) 
       {
           // This prevents the player from stretching for EVERY power-up
-          if (data.powerUpName.Equals("Noodle"))
+          if (data.powerUpName.Equals("Teleport To Center"))
           {
-              // Grabs the new scale from the PowerUpData file
-              // and applies it to the parent object
               transform.parent.localScale = data.scale;
-              Debug.Log("Power-Up Applied: I'm a noodle!");
+              Debug.Log("Teleported");
           }
       }
 
 // Is called when the effect ends
-      private void RemoveEffect(PowerUpData data) 
-      {
-          // Sets the scale back to where it was
-          transform.parent.localScale = originalScale;
-          Debug.Log("Power-Up Expired: Back to normal size.");
-      }
+      private void RemoveEffect(PowerUpData data)
+    {
+        
+    }
 }
+/*
+
+*/

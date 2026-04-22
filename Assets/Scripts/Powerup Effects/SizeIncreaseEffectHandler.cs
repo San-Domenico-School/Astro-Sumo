@@ -14,8 +14,8 @@
 * This example is one that has a visible effect, but is not 
 * useful in the game.  It is for demonstration purposes only.
 * 
-* Your Name
-* Date
+* Sufian St. Denny
+* 4/20
 **********************************************************************/
 using UnityEngine;
 
