@@ -85,6 +85,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 14d6de5224541422a9eeefbf9073adb3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2017176259987976413}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 14d6de5224541422a9eeefbf9073adb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4612427001881101089}
   m_SourcePrefab: {fileID: 100100000, guid: 14d6de5224541422a9eeefbf9073adb3, type: 3}
 --- !u!1 &7644011674324544529 stripped
 GameObject:
@@ -142,3 +145,15 @@ MonoBehaviour:
   timeInScene: 14.8
   AVPrefab: {fileID: 5535841037948806708, guid: 1c56f372cd06a48878857f71c03de22c, type: 3}
   rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &4612427001881101089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644011674324544529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdd23b19d1794a9a999be5e572a38fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MAssDecreaseEffectHandler
