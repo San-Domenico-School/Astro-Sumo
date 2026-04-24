@@ -96,6 +96,17 @@ public class PlayerJoinHandler : MonoBehaviour
         PlayerInput newPlayer = playerInputManager.JoinPlayer(pairWithDevice: device);
         if (newPlayer != null)
         {
+            // Centers Team 0,1,2,3 symmetrically around X=0
+            // Result: -7.5, -2.5, 2.5, 7.5
+            float xPos = (teamID * 5f) - 7.5f; 
+
+            // Centers Player 1 and 2 symmetrically around Z=0
+            // Result: -1, 1
+            float zOffset = (teamSelected[teamID] * 2f) - 1f;
+
+            newPlayer.transform.position = new Vector3(xPos, 3f, zOffset - 3);
+
+            // Join sequence
             joinedDevices.Add(device); // Mark this controller as "used"
             teamSelected[teamID]++;
             SetPlayerColor(newPlayer, color);

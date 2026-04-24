@@ -55,21 +55,24 @@ public class SpeedMultiplierEffectHandler : MonoBehaviour
     private void ApplyEffect(PowerUpData data) 
         {
             // This prevents the player from stretching for EVERY power-up
-            if (data.powerUpName.Equals("SpeedMultiplier"))
+            if (data.powerUpName.Equals("Speed Multiplier"))
             {
                 // Grabs the new scale from the PowerUpData file
                 // and applies it to the parent object
-                playerMovement.moveMagnitude = data.speedMultiplier;
-                Debug.Log("Power-Up Applied: SpeedMultiplier");
+                playerMovement.moveMagnitude *= data.speedMultiplier;
+                Debug.Log("Power-Up Applied: Speed Multiplier");
             }
         }
 
     // Is called when the effect ends
         private void RemoveEffect(PowerUpData data) 
         {
-            // Sets the scale back to where it was
-            playerMovement.moveMagnitude = originalMoveMagnitude;
-            Debug.Log("Power-Up Expired: Back to normal speed.");
+            if(data.powerUpName.Equals("Speed Multiplier"))
+            {
+                playerMovement.moveMagnitude = originalMoveMagnitude;
+                Debug.Log("Power-Up Expired: Back to normal speed.");
+            }
+            
         }
 }
 
