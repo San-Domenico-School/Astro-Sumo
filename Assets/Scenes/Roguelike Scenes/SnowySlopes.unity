@@ -311,11 +311,11 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[1]'
       value: 
-      objectReference: {fileID: 4355918016914258791, guid: 5e310342048704b5090b16828ea519ea, type: 3}
+      objectReference: {fileID: 132260, guid: 20e3dc0b472d44c899b860958dc9e2e6, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[2]'
       value: 
-      objectReference: {fileID: 132260, guid: 20e3dc0b472d44c899b860958dc9e2e6, type: 3}
+      objectReference: {fileID: 4355918016914258791, guid: 5e310342048704b5090b16828ea519ea, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[3]'
       value: 

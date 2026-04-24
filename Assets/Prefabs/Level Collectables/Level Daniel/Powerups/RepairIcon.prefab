@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
-  data: {fileID: 11400000, guid: 1aa3d4a3b496b4b328747c035066b529, type: 2}
+  data: {fileID: 11400000, guid: 1f700828a5a4e4750b022ebd23aa7df9, type: 2}
 --- !u!114 &3777875733410560584
 MonoBehaviour:
   m_ObjectHideFlags: 0

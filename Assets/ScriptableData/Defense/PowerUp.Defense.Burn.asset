@@ -29,9 +29,9 @@ MonoBehaviour:
   loseScore: 0
   collectionRange: 0
   ghostMode: 0
-  burn: 1
+  burn: 0
   anchorMode: 0
-  reverseAttack: 0
+  reverseAttack: -1
   freezeNearbyPlayers: 0
   slowAll: 0
   reverseControls: 0
