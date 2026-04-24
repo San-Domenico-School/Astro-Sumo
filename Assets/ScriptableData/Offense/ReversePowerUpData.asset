@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
-  m_Name: FreezeAll
+  m_Name: ReversePowerUpData
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
   powerUpName: 
-  colorIndicator: {r: 0, g: 0, b: 0, a: 0}
+  colorIndicator: {r: 0.85882354, g: 0.39607844, b: 0.015686275, a: 0}
   duration: 0
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 0.5
@@ -34,5 +34,5 @@ MonoBehaviour:
   reverseAttack: 0
   freezeNearbyPlayers: 0
   slowAll: 0
-  reverseControls: 0
+  reverseControls: 1
   reverseYourControls: 0

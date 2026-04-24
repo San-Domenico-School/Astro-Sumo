@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -1910525769631487238}
   - component: {fileID: -8395524192928421557}
   - component: {fileID: -7951509905624249503}
-  - component: {fileID: 386435704854041803}
   m_Layer: 0
   m_Name: SlowAll
   m_TagString: PowerUp
@@ -143,17 +142,3 @@ MonoBehaviour:
   timeInScene: 15.04
   AVPrefab: {fileID: 0}
   rotation: {x: 0.5, y: 0.5, z: 0.5}
---- !u!114 &386435704854041803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744407837024274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0c7b3a2f3674de09450a99842991e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlowAll
-  duration: 5
-  speedMultiplier: 0.4
