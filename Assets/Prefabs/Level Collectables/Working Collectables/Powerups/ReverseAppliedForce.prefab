@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6875731683505179433}
   - component: {fileID: 3777875733410560584}
   m_Layer: 0
-  m_Name: RepairIcon
+  m_Name: ReverseAppliedForce
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

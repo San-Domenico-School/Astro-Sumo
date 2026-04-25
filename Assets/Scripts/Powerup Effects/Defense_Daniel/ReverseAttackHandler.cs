@@ -25,8 +25,7 @@ public class ReverseAttackHandler : MonoBehaviour
       // Shown only as an example   
 private Rigidbody playerRB;  
 private PlayerMovement playerMovement; 
-private float originalMass; 
-private float originalAppliedForce;  
+private float originalMass;  
 private float originalMoveMagnitude;       
 
 // Needed if you need to grab additional components from the player
@@ -35,13 +34,17 @@ void Awake()
 {
     playerMovement = GetComponentInParent<PlayerMovement>();
     playerRB = GetComponentInParent<Rigidbody>();
-    originalMass = playerRB.mass;
-    originalAppliedForce = playerMovement.appliedForce;
-    originalMoveMagnitude = playerMovement.moveMagnitude;
 }
 
-// Called when this object becomes enabled and active
-// We subscribe to the global power-up events here
+void Start()
+{
+    originalMass = playerRB.mass;
+    originalMoveMagnitude = playerMovement.moveMagnitude;
+    Debug.Log($"Push {originalMoveMagnitude}");
+}
+
+    // Called when this object becomes enabled and active
+    // We subscribe to the global power-up events here
 void OnEnable()
 {
     PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
@@ -61,7 +64,7 @@ void OnDisable()
 private void ApplyEffect(PowerUpData data) 
       {
           // This prevents the player from stretching for EVERY power-up
-          if (data.powerUpName.Equals("ReverseAttack"))
+          if (data.powerUpName.Equals("Reverse Attack"))
           {
               // Make your player very heavy but still move normal
               playerRB.mass *= data.massIncrease;
@@ -77,14 +80,14 @@ private void ApplyEffect(PowerUpData data)
 // Is called when the effect ends
     private void RemoveEffect(PowerUpData data) 
     {
-        if (data.powerUpName.Equals("ReverseAttack"))
+        if (data.powerUpName.Equals("Reverse Attack"))
         {
           // Set your player to orginal mass
             playerRB.mass = originalMass;
             playerMovement.moveMagnitude = originalMoveMagnitude;
-            playerMovement.appliedForce = originalAppliedForce;
+            playerMovement.appliedForce = 0;
         }
           // Reverse Applied Force
-          Debug.Log("Power-Up Expired: Reversed Attack");
+          Debug.Log($"Power-Up Expired: Reversed Attack Mass: {playerRB.mass} push: {playerMovement.moveMagnitude}");
     }
 }

@@ -11,7 +11,8 @@ public class BurnEffectHandler : MonoBehaviour
       // Shown only as an example    
 private Rigidbody playerRB;   
 private ParticleSystem particleSystem;
-private Vector3 topPosition;   
+private Vector3 topPosition; 
+private float originalMass;  
 
 // Needed if you need to grab additional components from the player
 // such as the rigidbody shown
@@ -19,6 +20,7 @@ void Awake()
 {
     playerRB = GetComponentInParent<Rigidbody>();
     particleSystem = GetComponentInParent<ParticleSystem>();
+    originalMass = playerRB.mass;
 }
 
 // Called when this object becomes enabled and active
@@ -47,10 +49,14 @@ private void ApplyEffect(PowerUpData data)
             // Removes gravity from player
             playerRB.useGravity = false;
 
+            // Increase mass to make it harder to move
+            playerRB.mass *= data.massIncrease;
+
             // Turns on Particle System
             if(particleSystem != null)
             {
                 particleSystem.Play();
+                Debug.Log("Particle Starts");
             }
 
             // Moves player off ground
@@ -68,6 +74,7 @@ private void ApplyEffect(PowerUpData data)
             // Reinserts gravity
             CancelInvoke("MovePlayerUp");
             playerRB.useGravity = true;
+            playerRB.mass = originalMass;
             if(particleSystem != null)
             {
                 particleSystem.Stop();
