@@ -82,7 +82,7 @@ private void ApplyEffect(PowerUpData data)
           // Set your player to orginal mass
             playerRB.mass = originalMass;
             playerMovement.moveMagnitude = originalMoveMagnitude;
-            playerMovement.appliedForce = originalAppliedForce
+            playerMovement.appliedForce = originalAppliedForce;
         }
           // Reverse Applied Force
           Debug.Log("Power-Up Expired: Reversed Attack");
