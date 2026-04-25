@@ -1,20 +1,24 @@
+/********
+* This powerup takes the player out of commission for its durations
+* by having it float above the scene while turning off controls
+*/
+
 using UnityEngine;
 
-public class ReverseAttack : MonoBehaviour
+public class BurnEffectHandler : MonoBehaviour
 {
       // Declare fields as needed    
-      // Shown only as an example   
-private Vector3 originalScale;  
-private Rigidbody Rigidbody;   
-private float originalmass;         
+      // Shown only as an example    
+private Rigidbody playerRB;   
+private ParticleSystem particleSystem;
+private Vector3 topPosition;   
 
 // Needed if you need to grab additional components from the player
 // such as the rigidbody shown
 void Awake()
 {
-    originalScale = GetComponentInParent<Transform>().localScale;
-    Rigidbody = GetComponentInParent<Rigidbody>();
-    originalmass=Rigidbody.mass;
+    playerRB = GetComponentInParent<Rigidbody>();
+    particleSystem = GetComponentInParent<ParticleSystem>();
 }
 
 // Called when this object becomes enabled and active
@@ -37,23 +41,46 @@ PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
 // The PowerUpData parameter contains all configuration values
 private void ApplyEffect(PowerUpData data) 
       {
-          // This prevents the player from stretching for EVERY power-up
-          if (data.powerUpName.Equals("Burn"))
-          {
-              // Grabs the new scale from the PowerUpData file
-              // and applies it to the parent object
-              transform.parent.localScale = data.scale;
-              Debug.Log("Power-Up Applied: I'm a noodle!");
-              Rigidbody.mass = data.massIncrease;
-          }
-      }
+        // This prevents the player from stretching for EVERY power-up
+        if (data.powerUpName.Equals("Burn"))
+        {
+            // Removes gravity from player
+            playerRB.useGravity = false;
+
+            // Turns on Particle System
+            if(particleSystem != null)
+            {
+                particleSystem.Play();
+            }
+
+            // Moves player off ground
+            topPosition = transform.parent.position + Vector3.up * 5;
+            InvokeRepeating("MovePlayerUp", 0, .1f);
+            Debug.Log("Power-Up Applied: I am floating");
+        }
+    }
 
 // Is called when the effect ends
       private void RemoveEffect(PowerUpData data) 
       {
-          // Sets the scale back to where it was
-          transform.parent.localScale = originalScale;
-          Debug.Log("Power-Up Expired: Back to normal size.");
-          Rigidbody.mass = originalmass;
+        if (data.powerUpName.Equals("Burn"))
+        {
+            // Reinserts gravity
+            CancelInvoke("MovePlayerUp");
+            playerRB.useGravity = true;
+            if(particleSystem != null)
+            {
+                particleSystem.Stop();
+            }
+            Debug.Log("Power-Up Applied: I falling again");
+        }
       }
+
+      private void MovePlayerUp()
+    {
+        if(transform.parent.position.y < topPosition.y)
+        {
+            transform.parent.position += Vector3.up * .25f;
+        }
+    }
 }
