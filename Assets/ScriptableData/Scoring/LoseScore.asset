@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
   m_Name: LoseScore
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
-  powerUpName: LoseScore
+  powerUpName: Lose Score
   colorIndicator: {r: 0.3383759, g: 0.7169812, b: 0.1724813, a: 0}
   duration: 0
   scale: {x: 0, y: 0, z: 0}
@@ -26,7 +26,7 @@ MonoBehaviour:
   teleportToCenter: 0
   scoreValue: 0
   scoreMultiplier: 0
-  loseScore: 5
+  loseScore: 10
   collectionRange: 0
   ghostMode: 0
   burn: 0

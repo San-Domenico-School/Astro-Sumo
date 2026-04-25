@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
   timeInScene: 10
-  AVPrefab: {fileID: 0}
+  AVPrefab: {fileID: 5535841037948806708, guid: 1c56f372cd06a48878857f71c03de22c, type: 3}
   rotation: {x: 0, y: 0, z: 0}
 --- !u!135 &7662741652283016996
 SphereCollider:

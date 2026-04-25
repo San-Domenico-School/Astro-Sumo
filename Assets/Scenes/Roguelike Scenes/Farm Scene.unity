@@ -181,8 +181,12 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+      propertyPath: maxPowerupTypes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerups.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: scoreable.Array.size
@@ -191,15 +195,15 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[0]'
       value: 
-      objectReference: {fileID: 6085071540223561089, guid: 9b7e25d793a9e4bbb94a205546deeca2, type: 3}
+      objectReference: {fileID: 7887829516342388325, guid: 6501f9b4022994051b68c811e4c19c10, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[1]'
       value: 
-      objectReference: {fileID: 7887829516342388325, guid: 6501f9b4022994051b68c811e4c19c10, type: 3}
+      objectReference: {fileID: 192068, guid: 840324f13ca284f3c9f73ca822f7e3a7, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[2]'
       value: 
-      objectReference: {fileID: 192068, guid: 840324f13ca284f3c9f73ca822f7e3a7, type: 3}
+      objectReference: {fileID: 1250016051351487431, guid: 76a24e6e3fa3a4ebdbfd4b2475fb42c0, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[3]'
       value: 
@@ -207,7 +211,7 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[0]'
       value: 
-      objectReference: {fileID: 5783494498192920509, guid: a6a771c84087143cb98247fe722c3f4f, type: 3}
+      objectReference: {fileID: 5915725330752514968, guid: 778afb774f7ad4de6984f00fa4ad82b4, type: 3}
     - target: {fileID: 8358332775311980685, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: m_Name
       value: Managers

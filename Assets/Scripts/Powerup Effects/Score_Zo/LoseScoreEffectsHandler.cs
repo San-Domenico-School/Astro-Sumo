@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LosescoreeffectsHandler : MonoBehaviour
+public class LoseScoreEffectsHandler : MonoBehaviour
 {
     private PlayerScoreHandler scoreHandler;
 

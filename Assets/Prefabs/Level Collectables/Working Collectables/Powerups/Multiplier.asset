@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
   m_Name: Multiplier
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
-  powerUpName: ScoreMuiltiplier
+  powerUpName: Score Multiplier
   colorIndicator: {r: 1, g: 0.41492444, b: 0, a: 0}
-  duration: 0
+  duration: 10
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 0.5
   massIncrease: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   sizeIncreaseMultiplier: 1
   teleportToCenter: 0
   scoreValue: 0
-  scoreMultiplier: 1
+  scoreMultiplier: 3
   loseScore: 0
   collectionRange: 0
   ghostMode: 0

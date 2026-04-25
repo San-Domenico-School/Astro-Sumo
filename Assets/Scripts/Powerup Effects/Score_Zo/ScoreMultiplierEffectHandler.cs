@@ -8,6 +8,7 @@ public class ScoreMultiplierEffectHandler : MonoBehaviour
     {
         scoreHandler = GetComponentInParent<PlayerScoreHandler>();
     }
+    
 
     void OnEnable()
     {
@@ -25,7 +26,7 @@ public class ScoreMultiplierEffectHandler : MonoBehaviour
     {
         if (data.powerUpName.Equals("Score Multiplier") && scoreHandler != null)
         {
-            scoreHandler.scoreMultiplier = data.scoreMultiplier;
+            scoreHandler.scoreMultiplier *= data.scoreMultiplier;
             Debug.Log($"Power-Up Applied: {data.scoreMultiplier}x score multiplier active!");
         }
     }
