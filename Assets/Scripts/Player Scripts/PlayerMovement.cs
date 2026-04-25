@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveMagnitude, linearDamping, appliedForce;
     [HideInInspector]
     public bool controlsReversed, isFrozen; 
+    private bool isAtEdge;
    
     // Initializes physics references and sets default movement and physics property values.
     void Start()
@@ -68,7 +69,14 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         // anchors player
-        playerRB.linearDamping = isFrozen ? 1000 : linearDamping;
+        if(isFrozen)
+        {
+            playerRB.linearDamping = 1000;
+        }       
+        else if(!isAtEdge)
+        {
+            playerRB.linearDamping = linearDamping;
+        }
 
         //Adds force to player
         playerRB.AddForce(moveDirection * moveMagnitude * Time.deltaTime);
@@ -103,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Edge"))
         {
+            isAtEdge = true;
             playerRB.linearDamping = 12.5f;
         }
     }
@@ -124,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Edge"))
         {
+            isAtEdge = false;
             playerRB.linearDamping = linearDamping;
         }
     }
