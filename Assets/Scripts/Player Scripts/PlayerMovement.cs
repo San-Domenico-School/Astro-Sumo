@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveMagnitude, linearDamping, appliedForce;
     [HideInInspector]
     public bool controlsReversed, isFrozen; 
+    private bool isAtEdge;
    
     // Initializes physics references and sets default movement and physics property values.
     void Start()
@@ -33,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         moveMagnitude = 250;
         linearDamping = 0.5f;
-        appliedForce = 2;
         playerRB.AddForce(Random.onUnitSphere * moveMagnitude, ForceMode.Force);
     }
 
@@ -68,11 +68,22 @@ public class PlayerMovement : MonoBehaviour
     // Also handles destruction of the player if they fall below the map threshold.
     private void Move()
     {
-            playerRB.AddForce(moveDirection * moveMagnitude * Time.deltaTime);
-            if(transform.position.y < -10)
-            {
-                Destroy(gameObject);
-            }
+        // anchors player
+        if(isFrozen)
+        {
+            playerRB.linearDamping = 1000;
+        }       
+        else if(!isAtEdge)
+        {
+            playerRB.linearDamping = linearDamping;
+        }
+
+        //Adds force to player
+        playerRB.AddForce(moveDirection * moveMagnitude * Time.deltaTime);
+        if(transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Detects collisions with other players to calculate and apply 
@@ -100,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Edge"))
         {
+            isAtEdge = true;
             playerRB.linearDamping = 12.5f;
         }
     }
@@ -121,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Edge"))
         {
+            isAtEdge = false;
             playerRB.linearDamping = linearDamping;
         }
     }
