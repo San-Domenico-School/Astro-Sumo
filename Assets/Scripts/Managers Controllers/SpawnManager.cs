@@ -110,15 +110,11 @@ public class SpawnManager : MonoBehaviour
     // Returns a location on the Island
     private Vector3 SpawnLocation()
     {
-        Vector3 position = Vector3.zero;
+        // Sets random position on island
+        float xPos = Random.Range(-26.0f, 26.0f); 
+        float zPos = Random.Range(-13.75f, 6.0f); 
+        Vector3 position = new Vector3(xPos, 0, zPos);
 
-        // Guarantees that it is on the island
-        while (position.magnitude == 0 || position.magnitude > 12.3)
-        {
-            float xPos = Random.Range(-26.0f, 26.0f); 
-            float zPos = Random.Range(-13.75f, 6.0f); 
-            position = new Vector3(xPos, 0, zPos);
-        }
         return position;
     }
 }
