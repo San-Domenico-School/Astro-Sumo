@@ -39,13 +39,16 @@ private void ApplyEffect(PowerUpData data)
           if (data.powerUpName.Equals("Anchor"))
           {
               
-             playerMovement.isFrozen = data.anchorMode;
+            playerMovement.isFrozen = data.anchorMode;
           }
       }
 
 // Is called when the effect ends
       private void RemoveEffect(PowerUpData data) 
       {
-          playerMovement.isFrozen = !data.anchorMode;
+          if (data.powerUpName.Equals("Anchor"))
+          {
+            playerMovement.isFrozen = !data.anchorMode;
+          }
       }
 }
