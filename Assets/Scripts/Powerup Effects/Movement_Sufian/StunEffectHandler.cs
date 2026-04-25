@@ -31,6 +31,10 @@ public class StunEffectHandler : MonoBehaviour
     void Awake()
     {
         playerMovement = GetComponentInParent<PlayerMovement>();
+    }
+
+    void Start()
+    {
         originalMoveMagnitude = playerMovement.moveMagnitude;
     }
 
@@ -67,7 +71,7 @@ public class StunEffectHandler : MonoBehaviour
         {
              if (data.powerUpName.Equals("Stun"))
              {
-              playerMovement.moveMagnitude = 250;
+              playerMovement.moveMagnitude = originalMoveMagnitude;
               Debug.Log("Stun Expired");
              }
            

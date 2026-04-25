@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8020054486406402871}
   - component: {fileID: -2196799666075914068}
   m_Layer: 0
-  m_Name: Gem_01
+  m_Name: IncreaseSize
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192983798335586}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.31970933, y: -0, z: -0, w: 0.94751567}
+  m_LocalPosition: {x: 0, y: -0.271, z: 0.000000019356174}
+  m_LocalScale: {x: 2.55, y: 2.55, z: 2.55}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.291, y: 0, z: 0}
 --- !u!33 &33037587276796832
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 70af80c2a362640f987aa1b3f8103104, type: 2}
 --- !u!135 &-8020054486406402871
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -140,4 +140,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
   timeInScene: 3
+  AVPrefab: {fileID: 0}
   rotation: {x: 0, y: 0, z: 0}

@@ -23,13 +23,7 @@ public class TeleportToCenterEffectHandler : MonoBehaviour
       // Declare fields as needed    
       // Shown only as an example   
         		
-     public GameObject player;
-// Needed if you need to grab additional components from the player
-// such as the rigidbody shown
-    void Awake()
-    {
-        player = GameObject.Find("Player");
-    }
+
 
     // Called when this object becomes enabled and active
     // We subscribe to the global power-up events here
@@ -54,15 +48,15 @@ private void ApplyEffect(PowerUpData data)
           // This prevents the player from stretching for EVERY power-up
           if (data.powerUpName.Equals("Teleport To Center"))
           {
-            player.transform.position = new Vector3(0f, 0.5f, 0f);
+            transform.parent.position = new Vector3(0f, 0.5f, -4.75f);
             Debug.Log("Teleported");
           }
       }
 
 // Is called when the effect ends
-      private void RemoveEffect(PowerUpData data)
+    private void RemoveEffect(PowerUpData data)
     {
-        
+        // Nothing needed here
     }
 }
 /*
