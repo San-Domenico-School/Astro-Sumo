@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3062876126442416891}
   - component: {fileID: 887065012877006063}
   - component: {fileID: 7921725345169450214}
+  - component: {fileID: -3012695629559699002}
   m_Layer: 0
   m_Name: PowerUp Offense
   m_TagString: Untagged
@@ -57,3 +58,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02963ce71ebda486bb06953ab50d1d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FreezeAllEffectHandler
+--- !u!114 &-3012695629559699002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4796213971165051804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e46a4a4b48cd47e49faab6240260477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReverseYourContolsEffectHandler
