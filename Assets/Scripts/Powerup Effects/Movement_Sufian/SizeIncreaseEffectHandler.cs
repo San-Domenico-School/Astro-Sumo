@@ -64,8 +64,11 @@ public class SizeIncreaseEffectHandler : MonoBehaviour
     // Is called when the effect ends
         private void RemoveEffect(PowerUpData data) 
         {
-            // Sets the scale back to where it was
-            transform.parent.localScale = originalScale;
-            Debug.Log("Power-Up Expired: Back to normal size.");
+            if (data.powerUpName.Equals("Size Increase"))
+            {
+                // Sets the scale back to where it was
+                transform.parent.localScale = originalScale;
+                Debug.Log("Power-Up Expired: Back to normal size.");
+            }
         }
 }
