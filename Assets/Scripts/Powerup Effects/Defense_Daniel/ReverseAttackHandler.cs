@@ -40,7 +40,6 @@ void Start()
 {
     originalMass = playerRB.mass;
     originalMoveMagnitude = playerMovement.moveMagnitude;
-    Debug.Log($"Push {originalMoveMagnitude}");
 }
 
     // Called when this object becomes enabled and active
@@ -86,8 +85,9 @@ private void ApplyEffect(PowerUpData data)
             playerRB.mass = originalMass;
             playerMovement.moveMagnitude = originalMoveMagnitude;
             playerMovement.appliedForce = 0;
+          
+            Debug.Log($"Power-Up Expired: Reversed Attack Mass: {playerRB.mass} push: {playerMovement.moveMagnitude}");
         }
-          // Reverse Applied Force
-          Debug.Log($"Power-Up Expired: Reversed Attack Mass: {playerRB.mass} push: {playerMovement.moveMagnitude}");
+          
     }
 }
