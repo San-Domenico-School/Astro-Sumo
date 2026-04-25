@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
   m_Name: PushRange
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
-  powerUpName: PushRangeIncrease
+  powerUpName: Increase Pickup Range
   colorIndicator: {r: 0, g: 0, b: 0, a: 0}
   duration: 10
   scale: {x: 0, y: 0, z: 0}
-  pulseRadius: 0.5
+  pulseRadius: 10
   massIncrease: 0
   massDecrease: 0
-  pushRange: 10
+  pushRange: 1
   speedMultiplier: 1
   stun: 1
   sizeIncreaseMultiplier: 1
