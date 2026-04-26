@@ -173,10 +173,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+<<<<<<< HEAD
+=======
       propertyPath: maxWave
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+>>>>>>> main
       propertyPath: powerupRate
       value: 16
       objectReference: {fileID: 0}
@@ -185,12 +188,17 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+<<<<<<< HEAD
+      propertyPath: powerups.Array.size
+      value: 0
+=======
       propertyPath: maxPowerupTypes
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerups.Array.size
       value: 1
+>>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: scoreable.Array.size
@@ -199,7 +207,11 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[0]'
       value: 
+<<<<<<< HEAD
+      objectReference: {fileID: 135134, guid: 5628de27404c3402aa4029b9a5753b34, type: 3}
+=======
       objectReference: {fileID: 2352295156524218749, guid: 7bdf0a328c1794fa388b8f02940e8069, type: 3}
+>>>>>>> main
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[0]'
       value: 
@@ -380,6 +392,8 @@ PrefabInstance:
       addedObject: {fileID: 2025818287}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2023f832bd7544003901d14817adce02, type: 3}
+<<<<<<< HEAD
+=======
 --- !u!1 &1185301270
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +506,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> main
 --- !u!1 &1454148407
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,4 +962,7 @@ SceneRoots:
   - {fileID: 520663344}
   - {fileID: 659476251}
   - {fileID: 1454148409}
+<<<<<<< HEAD
+=======
   - {fileID: 1185301274}
+>>>>>>> main
