@@ -3,7 +3,7 @@
     <ui:VisualElement name="root-container" class="root-container">
         <ui:VisualElement name="header-bar" class="header-bar">
             <ui:Label text="LEVEL" class="level-label"/>
-            <ui:ProgressBar name="levelProgress" high-value="5" value="5" class="level-progress"/>
+            <ui:ProgressBar name="levelProgress" high-value="90" value="30" class="level-progress"/>
         </ui:VisualElement>
         <ui:VisualElement name="score-row" class="score-row">
             <ui:VisualElement class="team-9">
