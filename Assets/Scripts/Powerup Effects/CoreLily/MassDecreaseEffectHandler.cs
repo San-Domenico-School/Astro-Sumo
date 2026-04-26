@@ -6,7 +6,7 @@ public class MAssDecreaseEffectHandler : MonoBehaviour
       // Declare fields as needed    
       // Shown only as an example   
 private Vector3 originalScale;  
-private Rigidbody rigidbody;   
+private Rigidbody playerRB;   
 private float originalmass;   		
 
 // Needed if you need to grab additional components from the player
@@ -14,8 +14,8 @@ private float originalmass;
 void Awake()
 {
 	originalScale = GetComponentInParent<Transform>().localScale;
-    rigidbody = GetComponentInParent<Rigidbody>();
-    originalmass=rigidbody.mass;
+    playerRB = GetComponentInParent<Rigidbody>();
+    originalmass=playerRB.mass;
 }
 
 // Called when this object becomes enabled and active
@@ -45,7 +45,7 @@ private void ApplyEffect(PowerUpData data)
               // and applies it to the parent object
               transform.parent.localScale = data.scale;
               Debug.Log("Power-Up Applied: I'm a noodle!");
-              rigidbody.mass = data.massDecrease;
+              playerRB.mass = data.massDecrease;
           }
       }
 
@@ -57,7 +57,7 @@ private void ApplyEffect(PowerUpData data)
           // Sets the scale back to where it was
           transform.parent.localScale = originalScale;
           Debug.Log("Power-Up Expired: Back to normal size.");
-          rigidbody.mass = originalmass;
+          playerRB.mass = originalmass;
       } 
     } 
       
