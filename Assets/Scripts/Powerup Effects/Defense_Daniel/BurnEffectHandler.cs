@@ -10,7 +10,7 @@ public class BurnEffectHandler : MonoBehaviour
       // Declare fields as needed    
       // Shown only as an example    
 private Rigidbody playerRB;   
-private ParticleSystem particleSystem;
+private ParticleSystem particles;
 private Vector3 topPosition; 
 private float originalMass;  
 
@@ -19,7 +19,7 @@ private float originalMass;
 void Awake()
 {
     playerRB = GetComponentInParent<Rigidbody>();
-    particleSystem = GetComponentInParent<ParticleSystem>();
+    particles = GetComponentInParent<ParticleSystem>();
     originalMass = playerRB.mass;
 }
 
@@ -53,9 +53,9 @@ private void ApplyEffect(PowerUpData data)
             playerRB.mass *= data.massIncrease;
 
             // Turns on Particle System
-            if(particleSystem != null)
+            if(particles != null)
             {
-                particleSystem.Play();
+                particles.Play();
                 Debug.Log("Particle Starts");
             }
 
@@ -75,9 +75,9 @@ private void ApplyEffect(PowerUpData data)
             CancelInvoke("MovePlayerUp");
             playerRB.useGravity = true;
             playerRB.mass = originalMass;
-            if(particleSystem != null)
+            if(particles != null)
             {
-                particleSystem.Stop();
+                particles.Stop();
             }
             Debug.Log("Power-Up Applied: I falling again");
         }
