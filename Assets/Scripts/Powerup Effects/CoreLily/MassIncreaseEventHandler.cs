@@ -68,11 +68,16 @@ private void ApplyEffect(PowerUpData data)
       }
 
 // Is called when the effect ends
-      private void RemoveEffect(PowerUpData data) 
-      {
+      private void RemoveEffect(PowerUpData data)
+    {
+        if (data.powerUpName.Equals("MassIncrease"))
+         {
           // Sets the scale back to where it was
           transform.parent.localScale = originalScale;
           Debug.Log("Power-Up Expired: Back to normal size.");
           rigidbody.mass = originalmass;
-      }
+       }
+    }
+      
+     
 }

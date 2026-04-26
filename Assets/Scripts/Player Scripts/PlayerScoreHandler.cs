@@ -21,7 +21,21 @@ public class PlayerScoreHandler : MonoBehaviour
     [HideInInspector]
     public float scoreMultiplier = 1;
     
-    // Detects contact with scoreable triggers. Retrieves point data, calculates the multiplied total, 
+    // Adds points to this player's team score via GlobalEvents.
+    public void AddScore(int points)
+    {
+        GlobalEvents.SendScore(teamID, points);
+    }
+
+    // Subtracts points, clamped so team score cannot go below zero.
+    public void SubtractScore(int points)
+    {
+        int current = GlobalEvents.TeamScores[teamID];
+        int loss = Mathf.Min(points, current);
+        if (loss > 0) GlobalEvents.SendScore(teamID, -loss);
+    }
+
+    // Detects contact with scoreable triggers. Retrieves point data, calculates the multiplied total,
     // and triggers a global score event before removing the object from the scene.
     void OnTriggerEnter(Collider other)
     {
