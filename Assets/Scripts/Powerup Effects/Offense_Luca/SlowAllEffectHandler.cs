@@ -4,14 +4,23 @@ public class SlowAllEffectHandler : MonoBehaviour
 {
       // Declare fields as needed    
       // Shown only as an example   
-private PlayerMovement[] allPlayers;       		
+private PlayerMovement playerMovement;
+private PlayerMovement[] allPlayers;
+private float originalMoveMagnitude;
+    		
 
 // Needed if you need to grab additional components from the player
 // such as the rigidbody shown
 void Awake()
 {
-	//
+	playerMovement = GetComponentInParent<PlayerMovement>();
 }
+
+void Start()
+{
+	originalMoveMagnitude = playerMovement.moveMagnitude;
+}
+
 
 // Called when this object becomes enabled and active
 // We subscribe to the global power-up events here
@@ -34,30 +43,34 @@ PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
 private void ApplyEffect(PowerUpData data) 
       {
           // This prevents the player from stretching for EVERY power-up
-          if (data.powerUpName.Equals("FreezeAll"))
+          if (data.powerUpName.Equals("Slow All"))
           {
-            allPlayers = Object.FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+            allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+
+            // This loop slows all players (including yours)
             foreach (PlayerMovement player in allPlayers)
             {
-                player.moveMagnitude *= data.speedMultiplier;
+                player.moveMagnitude *= data.speedMultiplier;                  
             }
-            
-            //GetComponentInParent<PlayerMovement>().moveMagnitude /= data.speedMultiplier;
-            Debug.Log("Power-Up Applied: Opponents Frozen");
+ 
+              // Unslow your speed
+            playerMovement.isFrozen = !data.freezeNearbyPlayers;
+            Debug.Log("Power-Up Applied: slows opponents");
+
           }
       }
 
 // Is called when the effect ends
       private void RemoveEffect(PowerUpData data) 
       {
-          // Sets the scale back to where it was
-          if (data.powerUpName.Equals("FreezeAll"))
-          {
+        // Sets the speed back to where it was
+        if (data.powerUpName.Equals("Slow All"))
+        {
             foreach (PlayerMovement player in allPlayers)
             {
-                player.moveMagnitude /= data.speedMultiplier;
+                player.moveMagnitude = originalMoveMagnitude;
             }
             Debug.Log("Power-Up Expired: Back to normal speed.");
-          }
-      }
+        }
+    }
 }

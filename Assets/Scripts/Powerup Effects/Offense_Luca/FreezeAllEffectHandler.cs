@@ -4,13 +4,16 @@ public class FreezeAllEffectHandler : MonoBehaviour
 {
       // Declare fields as needed    
       // Shown only as an example   
-private PlayerMovement[] allPlayers;       		
+private PlayerMovement playerMovement;
+private PlayerMovement[] allPlayers;
+      		
 
 // Needed if you need to grab additional components from the player
 // such as the rigidbody shown
 void Awake()
 {
-	//
+	playerMovement = GetComponentInParent<PlayerMovement>();
+
 }
 
 // Called when this object becomes enabled and active
@@ -34,16 +37,20 @@ PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
 private void ApplyEffect(PowerUpData data) 
       {
           // This prevents the player from stretching for EVERY power-up
-          if (data.powerUpName.Equals("SlowAll"))
+          if (data.powerUpName.Equals("Freeze All"))
           {
-            allPlayers = Object.FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+            allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+
+            // This loop freezes all player controls (including yours)
             foreach (PlayerMovement player in allPlayers)
             {
-                player.moveMagnitude *= data.speedMultiplier;
+                player.isFrozen = data.freezeNearbyPlayers;
             }
             
-            GetComponentInParent<PlayerMovement>().moveMagnitude /= data.speedMultiplier;
-            Debug.Log("Power-Up Applied: Opponents slowed");
+            // This unfreezes your controls
+            playerMovement.isFrozen = !data.freezeNearbyPlayers;
+            Debug.Log("Power-Up Applied: Opponents frozen");
+
           }
       }
 
@@ -51,13 +58,13 @@ private void ApplyEffect(PowerUpData data)
       private void RemoveEffect(PowerUpData data) 
       {
           // Sets the scale back to where it was
-          if (data.powerUpName.Equals("SlowAll"))
+          if (data.powerUpName.Equals("Freeze All"))
           {
             foreach (PlayerMovement player in allPlayers)
             {
-                player.moveMagnitude = 1;
+                player.isFrozen = !data.freezeNearbyPlayers;
             }
-            Debug.Log("Power-Up Expired: Back to normal speed.");
+            Debug.Log("Power-Up Expired: Opponents unfrozen");
           }
       }
 }
