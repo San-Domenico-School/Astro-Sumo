@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         moveMagnitude = 250;
         linearDamping = 0.5f;
-        playerRB.AddForce(Random.onUnitSphere * moveMagnitude, ForceMode.Force);
     }
 
     // Updates physics-based movement and checks global scores 
