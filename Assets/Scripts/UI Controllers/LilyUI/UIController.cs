@@ -1,33 +1,35 @@
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 namespace LLesser
 {
-
     public class UIController : MonoBehaviour
-
-    private UIDocument uIDocument;
-    Label[] teamScoresUI;
-   private ProgressBar gameProgress;
-   private int[] teanScore = new int[4];
-   private interface levelTime;
-
     {
+        private UIDocument uiDocument;
+         Label[] teamScoresUI;
+        private ProgressBar levelProgress;
+        private ProgressBar gameProgress;
+        private int[] teamScores = new int[4];
+        private int levelTime;
+
+    
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             uiDocument = GetComponent<UIDocument>();
-            var root = uiDocument.rootvisualElement;
+            var root = uiDocument.rootVisualElement;
 
             teamScoresUI = new Label[]
-            {
-                root.Q<Label>("(9thScore)"),
-                root.Q<Label>("10thScore"),
-                root.Q<Label>("11thScore"),
-                root.Q<Label>("12thScore"),
-            };
-            
-            levelProgress = root.Q<ProgressBar>("LevelProgress");
-            gameProgress = root.Q<ProgressBar>("GameProgress");
+                {
+                    root.Q<Label>("9thScore"),
+                    root.Q<Label>("10thScore"),
+                    root.Q<Label>("11thScore"),
+                    root.Q<Label>("12thScore"),
+                };
+                            
+            levelProgress = root.Q<ProgressBar>("LevelTimeRemaining");
+            gameProgress = root.Q<ProgressBar>("GameTimeRemaining");
 
             //Determines the levelTime for this Scene
             int scenesRemaining = SceneManager.sceneCountInBuildSettings - GlobalEvents.SceneIndex;
@@ -36,11 +38,7 @@ namespace LLesser
             levelProgress.highValue = levelTime;
             levelProgress.value = levelTime;
 
-            InvokeRepeating(nameof(TimeRemaining), 0f, 1f);
-
-
-
-
+            InvokeRepeating("TimeRemaining", 0f, 1f);
 
         }
 
@@ -54,51 +52,66 @@ namespace LLesser
     
         void ProgressUpdate()
         {
-            levelProgress.value = currentLevelTime;
-            gameProgress.value = GlobalEvents.currentGameTime;
+            levelProgress.value = levelTime;
+            gameProgress.value = GlobalEvents.GameTime;
 
         }
 
         void ScoreUpdate()
         {
-            for (int i = 0; i <teamScores.length; ++)
+            for (int i = 0; i <GlobalEvents.TeamScores.Length; i++)
             {
                 
-            string teamGrade = (i + 9) + "th Grade";
-            teamScores[i] = GlobalEvents.teamScores[i];
-            teamScoresUI[i].text = teamGrade + ": " + teamScores[i];
+                string teamGrade = (i + 9) + "th Grade";
+                teamScores[i] = GlobalEvents.TeamScores[i];
+                teamScoresUI[i].text = teamGrade + ": " + teamScores[i];   
             } 
         }
 
         void TimeRemaining()
         {
-           
-           levelTime--;
-           GlobalEvents.SendGameTime();
-           SwitchScenes();
+        
+            levelTime--;
+            GlobalEvents.SendGameTime();
+            SwitchScenes();
         }
 
-        void switchScenes()
+        void SwitchScenes()
         {
-             if (levelTime == 0)
-             {
+            if (levelTime == 15)
+            {
         
-             GlobalEvents.SendSceneIndex();
+                GlobalEvents.SendSceneIndex();
 
-        
+            }
+
             if (GlobalEvents.SceneIndex < SceneManager.sceneCountInBuildSettings)
-         {
+            {
+                
+                SceneManager.LoadScene(GlobalEvents.SceneIndex);
+            }
+            else if (GlobalEvents.GameTime <= 0)
             
-            SceneManager.LoadScene(GlobalEvents.SceneIndex);
-         }
-            else if (gameTime <= 0)
-        {
-            // Stop the game
-            Time.timeScale = 0;
+            {
+                // Stop the game
+                Time.timeScale = 0;
 
-            // Stop calling the TimeRemaining method
-            CancelInvoke("TimeRemaining");
-        }
+                // Stop calling the TimeRemaining method
+                CancelInvoke("TimeRemaining");
+            }
         }
     }
 }
+
+
+
+
+
+    
+
+
+    
+
+    
+
+    

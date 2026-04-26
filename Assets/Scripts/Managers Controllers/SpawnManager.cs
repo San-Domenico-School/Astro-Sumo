@@ -7,21 +7,25 @@
 * Jan 4, 2026
 **********************************************************************/
 
+using System.Linq; // Required for OrderBy and Take
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     [Header("Objects to Spawn")]
     [SerializeField] private GameObject[] powerups;
-     [SerializeField] private GameObject[] scoreable;
+    [SerializeField] private GameObject[] scoreable;
     [SerializeField] private GameObject enemy;
+    private GameObject[] spawnablePowerups;
    
-    [Header("Spawn Rates per Minute")]
+    [Header("Spawn Attributes")]
     [Range(3, 30)]
     [SerializeField] private int powerupRate;   
         
     [Range(3, 30)]
     [SerializeField] private int scoreableRate;   
+    [SerializeField] private int maxPowerupTypes;
+   
 
     [Header("Maximum Enemies Per Wave")]
     [SerializeField] private float maxWave;
@@ -30,6 +34,22 @@ public class SpawnManager : MonoBehaviour
     [HideInInspector]
     public static int enemyCount;
 
+
+    void Start()
+    {
+        if (powerups.Length <= maxPowerupTypes)
+        {
+            spawnablePowerups = powerups;
+        }
+        else
+        {
+            // Shuffle the array randomly and take the first 'maxPowerupTypes' elements
+            spawnablePowerups = powerups
+                .OrderBy(x => Random.value) 
+                .Take(maxPowerupTypes)
+                .ToArray();
+        }
+    }
 
     // Spawns called per fram
     void Update()
@@ -43,11 +63,12 @@ public class SpawnManager : MonoBehaviour
     void SpawnPowerup()
     {
         float spawnThreshold = powerupRate / 60f * Time.deltaTime;
-        if(Random.value < spawnThreshold && powerups.Length > 0)
+        if(Random.value < spawnThreshold && spawnablePowerups.Length > 0)
         {
-            int choiceIndex = Random.Range(0, powerups.Length); 
+            int choiceIndex = Random.Range(0, spawnablePowerups.Length); 
             Vector3 position = SpawnLocation();
-            Instantiate(powerups[choiceIndex], position, transform.rotation); 
+            Quaternion prefabRotation = spawnablePowerups[choiceIndex].transform.rotation;
+            Instantiate(spawnablePowerups[choiceIndex], position, prefabRotation); 
         }
     }
     
@@ -59,7 +80,8 @@ public class SpawnManager : MonoBehaviour
         {
             int choiceIndex = Random.Range(0, scoreable.Length); 
             Vector3 position = SpawnLocation();
-            Instantiate(scoreable[choiceIndex], position, transform.rotation); 
+            Quaternion prefabRotation = scoreable[choiceIndex].transform.rotation;
+            Instantiate(scoreable[choiceIndex], position, prefabRotation); 
         }
     }
 
@@ -88,15 +110,11 @@ public class SpawnManager : MonoBehaviour
     // Returns a location on the Island
     private Vector3 SpawnLocation()
     {
-        Vector3 position = Vector3.zero;
+        // Sets random position on island
+        float xPos = Random.Range(-26.0f, 26.0f); 
+        float zPos = Random.Range(-13.75f, 6.0f); 
+        Vector3 position = new Vector3(xPos, 0, zPos);
 
-        // Guarantees that it is on the island
-        while (position.magnitude == 0 || position.magnitude > 12.3)
-        {
-            float xPos = Random.Range(-11.0f, 11.0f); 
-            float zPos = Random.Range(-11.0f, 11.0f); 
-            position = new Vector3(xPos, 0, zPos);
-        }
         return position;
     }
 }

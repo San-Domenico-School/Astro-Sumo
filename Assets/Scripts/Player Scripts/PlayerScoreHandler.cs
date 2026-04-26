@@ -36,7 +36,8 @@ public class PlayerScoreHandler : MonoBehaviour
             GlobalEvents.SendScore(teamID, (int) (scoreable.scoreValue * scoreMultiplier));
           
             // 3. Remove the scoreable from the world
-            Destroy(other.gameObject);
+            CollectableController collectableController = other.gameObject.GetComponent<CollectableController>();
+            collectableController.DestroyCollectable();
         }
     }
 }
