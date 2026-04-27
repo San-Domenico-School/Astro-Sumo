@@ -14,7 +14,8 @@ public class PlayerScoreHandler : MonoBehaviour
 {
     // Identifies which team this player belongs to. 
     // Used as an index when sending scores to GlobalEvents.
-    public int teamID {private get; set;}
+    [HideInInspector]
+    public int teamID;
    
     // A scalar value applied to all collected points. 
     // Controlled by external power-up scripts to temporarily boost scoring.

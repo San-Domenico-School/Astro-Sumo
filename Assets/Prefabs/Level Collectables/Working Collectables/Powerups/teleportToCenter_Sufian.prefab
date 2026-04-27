@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1192983798335586
+--- !u!1 &1729945580980676
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,53 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4758555946733452}
-  - component: {fileID: 33037587276796832}
-  - component: {fileID: 23769591346357710}
-  - component: {fileID: 1665316992834768121}
-  - component: {fileID: -8020054486406402871}
-  - component: {fileID: -2196799666075914068}
+  - component: {fileID: 4172430691150986}
+  - component: {fileID: 33118119716790622}
+  - component: {fileID: 23114244185766776}
+  - component: {fileID: -2430082710035187095}
+  - component: {fileID: 2540878631483501151}
+  - component: {fileID: -6806351174040411350}
   m_Layer: 0
-  m_Name: SizeIncrease
+  m_Name: teleportToCenter_Sufian
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4758555946733452
+--- !u!4 &4172430691150986
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192983798335586}
+  m_GameObject: {fileID: 1729945580980676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-<<<<<<< HEAD:Assets/Prefabs/Level Collectables/Level Lily/Powerups/Potion_01.prefab
-  m_LocalScale: {x: 2.7766, y: 2.7766, z: 2.7766}
-=======
-  m_LocalScale: {x: 2.752258, y: 2.752258, z: 2.752258}
->>>>>>> main:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/SizeIncrease.prefab
+  m_LocalScale: {x: 3.1134799, y: 3.1134799, z: 3.1134799}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33037587276796832
+--- !u!33 &33118119716790622
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192983798335586}
-  m_Mesh: {fileID: 4300000, guid: c8e9a715daac24048a124a1f8e3487fa, type: 3}
---- !u!23 &23769591346357710
+  m_GameObject: {fileID: 1729945580980676}
+  m_Mesh: {fileID: 4300000, guid: f7ec8369cac1a7e4ab36747b35f91c24, type: 3}
+--- !u!23 &23114244185766776
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192983798335586}
+  m_GameObject: {fileID: 1729945580980676}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -97,26 +93,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1665316992834768121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192983798335586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
-  data: {fileID: 11400000, guid: 70af80c2a362640f987aa1b3f8103104, type: 2}
---- !u!135 &-8020054486406402871
+--- !u!135 &-2430082710035187095
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192983798335586}
+  m_GameObject: {fileID: 1729945580980676}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -130,24 +113,32 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: -0.000000022351742, z: 0}
---- !u!114 &-2196799666075914068
+  m_Center: {x: 0, y: 0.000000007450581, z: 0.0000000018626451}
+--- !u!114 &2540878631483501151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192983798335586}
+  m_GameObject: {fileID: 1729945580980676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d479518eb12f429fb71f899ee9c3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpConfig
+  data: {fileID: 11400000, guid: 69e6b4b749ad540f1925cc9286ef1640, type: 2}
+--- !u!114 &-6806351174040411350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729945580980676}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6190d78be3bd345b98a8731f59f26664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
-<<<<<<< HEAD:Assets/Prefabs/Level Collectables/Level Lily/Powerups/Potion_01.prefab
-  timeInScene: 3
-  AVPrefab: {fileID: 0}
-=======
   timeInScene: 7
   AVPrefab: {fileID: 5535841037948806708, guid: 1c56f372cd06a48878857f71c03de22c, type: 3}
->>>>>>> main:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/SizeIncrease.prefab
   rotation: {x: 0, y: 0, z: 0}

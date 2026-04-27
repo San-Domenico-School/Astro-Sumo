@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7637630258467879251}
   - component: {fileID: 7518444515560207165}
   m_Layer: 0
-  m_Name: MassDecrease-lily
+  m_Name: MassDecrease-Lily
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

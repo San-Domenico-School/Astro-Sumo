@@ -26,12 +26,15 @@ public class PlayerMovement : MonoBehaviour
     public float moveMagnitude, linearDamping, appliedForce;
     [HideInInspector]
     public bool controlsReversed, isFrozen; 
+    [HideInInspector]
+    public int teamID;
     private bool isAtEdge;
    
     // Initializes physics references and sets default movement and physics property values.
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        teamID = GetComponent<PlayerScoreHandler>().teamID;
         moveMagnitude = 250;
         linearDamping = 0.5f;
     }
