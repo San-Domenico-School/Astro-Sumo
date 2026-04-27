@@ -5,7 +5,9 @@ public class FreezeAllEffectHandler : MonoBehaviour
       // Declare fields as needed    
       // Shown only as an example   
 private PlayerMovement playerMovement;
+private int teamID;
 private PlayerMovement[] allPlayers;
+private PlayerScoreHandler[] playerIDs;
       		
 
 // Needed if you need to grab additional components from the player
@@ -13,7 +15,10 @@ private PlayerMovement[] allPlayers;
 void Awake()
 {
 	playerMovement = GetComponentInParent<PlayerMovement>();
-
+}
+void Start()
+{
+    teamID = GetComponentInParent<PlayerMovement>().teamID;
 }
 
 // Called when this object becomes enabled and active
@@ -41,13 +46,11 @@ private void ApplyEffect(PowerUpData data)
           {
             allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
 
-            // This loop freezes all player controls (including yours)
+            // This loop freezes all player controls except yours
             foreach (PlayerMovement player in allPlayers)
             {
                 player.isFrozen = data.freezeNearbyPlayers;
             }
-            
-            // This unfreezes your controls
             playerMovement.isFrozen = !data.freezeNearbyPlayers;
             Debug.Log("Power-Up Applied: Opponents frozen");
 

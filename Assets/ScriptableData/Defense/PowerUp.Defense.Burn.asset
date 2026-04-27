@@ -29,7 +29,7 @@ MonoBehaviour:
   loseScore: 0
   collectionRange: 0
   ghostMode: 0
-  burn: 0
+  burn: 1
   anchorMode: 0
   reverseAttack: -1
   freezeNearbyPlayers: 0

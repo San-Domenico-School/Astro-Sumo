@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1457849061078422617}
   - component: {fileID: 593324650143958291}
   - component: {fileID: 4393851543552105730}
-  - component: {fileID: -3466213385642198026}
   - component: {fileID: -7060004241439809162}
   - component: {fileID: -484457855667613920}
+  - component: {fileID: 6661084798834754365}
   m_Layer: 0
   m_Name: PowerUp Core Combat
   m_TagString: Untagged
@@ -69,18 +69,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333006c7c67ca4a18a58b268e60f3da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MassIncreaseEventHandler
---- !u!114 &-3466213385642198026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4613284328911920407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722927ff0138b47429dd7ae3841a4556, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MassDecrease
 --- !u!114 &-7060004241439809162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,3 +94,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1aaf300bab914fdf8164c0d278d12e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PushRangeEffectHandler
+--- !u!114 &6661084798834754365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613284328911920407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdd23b19d1794a9a999be5e572a38fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MassDecreaseEffectHandler

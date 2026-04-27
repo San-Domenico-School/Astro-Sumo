@@ -5,7 +5,7 @@ public class ReverseAllContolsEffectHandler : MonoBehaviour
       // Declare fields as needed    
       // Shown only as an example   
 private PlayerMovement playerMovement;
-private PlayerMovement[] allPlayers;        		
+private PlayerMovement[] allPlayers;    		
 
 // Needed if you need to grab additional components from the player
 // such as the rigidbody shown
@@ -14,9 +14,9 @@ void Awake()
 	playerMovement = GetComponentInParent<PlayerMovement>();
 }
 
-// Called when this object becomes enabled and active
-// We subscribe to the global power-up events here
-void OnEnable()
+    // Called when this object becomes enabled and active
+    // We subscribe to the global power-up events here
+    void OnEnable()
 {
     PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
     PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
@@ -35,19 +35,19 @@ void OnDisable()
 private void ApplyEffect(PowerUpData data) 
 {
     // This prevents the player from stretching for EVERY power-up
-    if (data.powerUpName.Equals("Reverse Your Controls"))
+    if (data.powerUpName.Equals("Reverse All Controls"))
     {
         allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+        Debug.Log($"Found {allPlayers.Length} players to reverse controls for.");
 
         // This loop freezes all player controls (including yours)
         foreach (PlayerMovement player in allPlayers)
         {
-            player.controlsReversed = data.reverseControls;
+                player.controlsReversed = data.reverseControls;
         }
-    
-    // This unfreezes your controls
-    playerMovement.controlsReversed = !data.reverseControls;
-    Debug.Log("Power-Up Applied: Opponents frozen");
+        
+        playerMovement.controlsReversed = !data.reverseControls;
+        Debug.Log("Power-Up Applied: Reverse controls for all opponents!");
 
     }
 }
@@ -55,7 +55,7 @@ private void ApplyEffect(PowerUpData data)
 // Is called when the effect ends
     private void RemoveEffect(PowerUpData data) 
     {
-        if (data.powerUpName.Equals("Reverse Your Controls"))
+        if (data.powerUpName.Equals("Reverse All Controls"))
         {
             foreach (PlayerMovement player in allPlayers)
             {

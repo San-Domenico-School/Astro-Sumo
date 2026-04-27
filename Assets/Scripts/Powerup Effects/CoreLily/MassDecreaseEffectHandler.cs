@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MAssDecreaseEffectHandler : MonoBehaviour
+public class MassDecreaseEffectHandler : MonoBehaviour
 
 {
       // Declare fields as needed    
