@@ -14,6 +14,7 @@ public class PlayerScoreHandler : MonoBehaviour
 {
     // Identifies which team this player belongs to. 
     // Used as an index when sending scores to GlobalEvents.
+
     [HideInInspector]
     public int teamID;
    
@@ -39,20 +40,24 @@ public class PlayerScoreHandler : MonoBehaviour
     // Detects contact with scoreable triggers. Retrieves point data, calculates the multiplied total,
     // and triggers a global score event before removing the object from the scene.
     void OnTriggerEnter(Collider other)
+{
+    if(other.gameObject.CompareTag("Scoreable"))
     {
-        if(other.gameObject.CompareTag("Scoreable"))
-        {
-            // 1. GET SCORE VALUE   
-            // This receives from the scoreable te points"
-            ScoreableConfig scoreable = other.GetComponent<ScoreableConfig>();
+        ScoreableConfig scoreable = other.GetComponent<ScoreableConfig>();
 
-            // 2. CALL THE EVENT (The "Broadcast")
-            // This sends a signal to the whole game saying "Team X got points!"
-            GlobalEvents.SendScore(teamID, (int) (scoreable.scoreValue * scoreMultiplier));
+        // Check if it's already been processed
+        if (scoreable != null && !scoreable.isScored)
+        {
+            // Mark it immediately so no other triggers can use it
+            scoreable.isScored = true; 
+
+            // 2. CALL THE EVENT
+            GlobalEvents.SendScore(teamID, (int)(scoreable.scoreValue * scoreMultiplier));
           
-            // 3. Remove the scoreable from the world
+            // 3. Remove the scoreable
             CollectableController collectableController = other.gameObject.GetComponent<CollectableController>();
             collectableController.DestroyCollectable();
         }
     }
+}
 }

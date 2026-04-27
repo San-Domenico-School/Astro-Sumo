@@ -38,15 +38,16 @@ private void ApplyEffect(PowerUpData data)
     if (data.powerUpName.Equals("Reverse All Controls"))
     {
         allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+        Debug.Log($"Found {allPlayers.Length} players to reverse controls for.");
 
         // This loop freezes all player controls (including yours)
         foreach (PlayerMovement player in allPlayers)
         {
-            if(playerMovement.teamID != player.teamID)
                 player.controlsReversed = data.reverseControls;
         }
-    
-        Debug.Log("Power-Up Applied: Opponents frozen");
+        
+        playerMovement.controlsReversed = !data.reverseControls;
+        Debug.Log("Power-Up Applied: Reverse controls for all opponents!");
 
     }
 }

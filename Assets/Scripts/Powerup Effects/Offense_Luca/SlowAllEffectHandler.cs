@@ -54,7 +54,7 @@ private void ApplyEffect(PowerUpData data)
             }
  
               // Unslow your speed
-            playerMovement.isFrozen = !data.freezeNearbyPlayers;
+            playerMovement.moveMagnitude = originalMoveMagnitude;
             Debug.Log("Power-Up Applied: slows opponents");
 
           }

@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coins
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0b2706154689e4f6fb335a796d66988f, type: 3}
+      propertyPath: m_TagString
+      value: Scoreable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4929,6 +4933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190d78be3bd345b98a8731f59f26664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
-  timeInScene: 3
+  timeInScene: 17.9
   AVPrefab: {fileID: 5535841037948806708, guid: f5df2509ed71e46b8a630934dd6b9c5a, type: 3}
   rotation: {x: 0, y: 0, z: 0}

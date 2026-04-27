@@ -49,10 +49,9 @@ private void ApplyEffect(PowerUpData data)
             // This loop freezes all player controls except yours
             foreach (PlayerMovement player in allPlayers)
             {
-                if(teamID != player.teamID)
-                    player.isFrozen = data.freezeNearbyPlayers;
+                player.isFrozen = data.freezeNearbyPlayers;
             }
-            
+            playerMovement.isFrozen = !data.freezeNearbyPlayers;
             Debug.Log("Power-Up Applied: Opponents frozen");
 
           }
