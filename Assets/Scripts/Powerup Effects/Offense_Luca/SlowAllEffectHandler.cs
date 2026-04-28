@@ -7,6 +7,7 @@ public class SlowAllEffectHandler : MonoBehaviour
 private PlayerMovement playerMovement;
 private PlayerMovement[] allPlayers;
 private float originalMoveMagnitude;
+private int teamID;  
     		
 
 // Needed if you need to grab additional components from the player
@@ -19,6 +20,7 @@ void Awake()
 void Start()
 {
 	originalMoveMagnitude = playerMovement.moveMagnitude;
+    teamID = GetComponentInParent<PlayerMovement>().teamID;
 }
 
 
@@ -60,11 +62,12 @@ private void ApplyEffect(PowerUpData data)
             // This loop slows all players (including yours)
             foreach (PlayerMovement player in allPlayers)
             {
-                player.moveMagnitude *= data.speedMultiplier;                  
+                int playerTeamID = player.teamID;
+                if(!(playerTeamID == teamID))
+                    player.moveMagnitude *= data.speedMultiplier;                  
             }
  
               // Unslow your speed
-            playerMovement.moveMagnitude = originalMoveMagnitude;
             Debug.Log("Power-Up Applied: slows opponents");
 
           }
