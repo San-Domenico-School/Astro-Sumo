@@ -15,18 +15,29 @@ public class PulseRadiusEffectHandler : MonoBehaviour
     }
 
     // Called when this object becomes enabled and active
-    void OnEnable()
+   void OnEnable()
+{
+    // Find the specific handler on THIS player
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
     {
-        PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-        PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+        handler.OnPowerUpApplied += ApplyEffect;
+        handler.OnPowerUpExpired += RemoveEffect;
     }
+}
 
-    // Called when this object is disabled or destroyed
-    void OnDisable()
+void OnDisable()
+{
+    // Clean up using the same logic
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
     {
-        PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-        PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+        handler.OnPowerUpApplied -= ApplyEffect;
+        handler.OnPowerUpExpired -= RemoveEffect;
     }
+}
 
     // Is called when the effect begins
     private void ApplyEffect(PowerUpData data) 

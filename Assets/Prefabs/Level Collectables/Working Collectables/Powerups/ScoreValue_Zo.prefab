@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3537887703603063200}
   - component: {fileID: 7153456234410208639}
   m_Layer: 0
-  m_Name: ScoreValue
+  m_Name: ScoreValue_Zo
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
