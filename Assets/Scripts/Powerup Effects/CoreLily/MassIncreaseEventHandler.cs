@@ -62,7 +62,7 @@ private void ApplyEffect(PowerUpData data)
               // Grabs the new scale from the PowerUpData file
               // and applies it to the parent object
               transform.parent.localScale = data.scale;
-              Debug.Log("Power-Up Applied: I'm a noodle!");
+              Debug.Log("Power-Up Applied: Mass increase");
               playerRB.mass = data.massIncrease;
           }
       }

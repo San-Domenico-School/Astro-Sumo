@@ -44,7 +44,7 @@ private void ApplyEffect(PowerUpData data)
               // Grabs the new scale from the PowerUpData file
               // and applies it to the parent object
               transform.parent.localScale = data.scale;
-              Debug.Log("Power-Up Applied: I'm a noodle!");
+              Debug.Log("Power-Up Applied: Lost Mass!");
               playerRB.mass = data.massDecrease;
           }
       }
@@ -56,7 +56,7 @@ private void ApplyEffect(PowerUpData data)
         {
           // Sets the scale back to where it was
           transform.parent.localScale = originalScale;
-          Debug.Log("Power-Up Expired: Back to normal size.");
+          Debug.Log("Power-Up Expired: Back to normal mass.");
           playerRB.mass = originalmass;
       } 
     } 

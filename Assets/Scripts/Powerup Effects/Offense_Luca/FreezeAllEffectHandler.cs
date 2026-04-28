@@ -46,9 +46,13 @@ private void ApplyEffect(PowerUpData data)
           {
             allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
 
+            Debug.Log($"PlayerID {teamID}");
             // This loop freezes all player controls except yours
             foreach (PlayerMovement player in allPlayers)
             {
+                int playerTeamID = player.teamID;
+                Debug.Log($"PlayerID {playerTeamID}");
+                //if(!(playerTeamID == teamID))
                 player.isFrozen = data.freezeNearbyPlayers;
             }
             playerMovement.isFrozen = !data.freezeNearbyPlayers;

@@ -59,9 +59,10 @@ public class PushRangeEffectHandler : MonoBehaviour
         if (data.powerUpName.Equals("Increase Pickup Range"))
         {
             sphereCollider.radius = originalColliderRadius;
+            Debug.Log("radius normal!");
         }
 
-        Debug.Log("radius normal!");
+        
     }
 }
 
