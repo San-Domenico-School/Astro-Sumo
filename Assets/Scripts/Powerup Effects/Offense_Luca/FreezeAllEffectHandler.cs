@@ -25,16 +25,26 @@ void Start()
 // We subscribe to the global power-up events here
 void OnEnable()
 {
-PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+    // Find the specific handler on THIS player
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
+    {
+        handler.OnPowerUpApplied += ApplyEffect;
+        handler.OnPowerUpExpired += RemoveEffect;
+    }
 }
 
-// Called when this object is disabled or destroyed
-// We must unsubscribe to prevent errors and unwanted behavior
 void OnDisable()
 {
-PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+    // Clean up using the same logic
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
+    {
+        handler.OnPowerUpApplied -= ApplyEffect;
+        handler.OnPowerUpExpired -= RemoveEffect;
+    }
 }
 
 // Is called when the effect begins
@@ -46,9 +56,13 @@ private void ApplyEffect(PowerUpData data)
           {
             allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
 
+            Debug.Log($"PlayerID {teamID}");
             // This loop freezes all player controls except yours
             foreach (PlayerMovement player in allPlayers)
             {
+                int playerTeamID = player.teamID;
+                Debug.Log($"PlayerID {playerTeamID}");
+                //if(!(playerTeamID == teamID))
                 player.isFrozen = data.freezeNearbyPlayers;
             }
             playerMovement.isFrozen = !data.freezeNearbyPlayers;

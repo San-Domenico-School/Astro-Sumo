@@ -22,16 +22,28 @@ void Awake()
 // We subscribe to the global power-up events here
 void OnEnable()
 {
-PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+    // Find the specific handler on THIS player
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
+    {
+        handler.OnPowerUpApplied += ApplyEffect;
+        handler.OnPowerUpExpired += RemoveEffect;
+    }
 }
 
 // Called when this object is disabled or destroyed
 // We must unsubscribe to prevent errors and unwanted behavior
 void OnDisable()
 {
-PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+    // Clean up using the same logic
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
+    {
+        handler.OnPowerUpApplied -= ApplyEffect;
+        handler.OnPowerUpExpired -= RemoveEffect;
+    }
 }
 
 // Is called when the effect begins
@@ -44,7 +56,7 @@ private void ApplyEffect(PowerUpData data)
               // Grabs the new scale from the PowerUpData file
               // and applies it to the parent object
               transform.parent.localScale = data.scale;
-              Debug.Log("Power-Up Applied: I'm a noodle!");
+              Debug.Log("Power-Up Applied: Lost Mass!");
               playerRB.mass = data.massDecrease;
           }
       }
@@ -56,7 +68,7 @@ private void ApplyEffect(PowerUpData data)
         {
           // Sets the scale back to where it was
           transform.parent.localScale = originalScale;
-          Debug.Log("Power-Up Expired: Back to normal size.");
+          Debug.Log("Power-Up Expired: Back to normal mass.");
           playerRB.mass = originalmass;
       } 
     } 
