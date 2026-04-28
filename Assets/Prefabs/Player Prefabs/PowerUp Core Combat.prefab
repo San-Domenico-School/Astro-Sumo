@@ -9,6 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1457849061078422617}
+  - component: {fileID: 593324650143958291}
+  - component: {fileID: 4393851543552105730}
+  - component: {fileID: -3466213385642198026}
+  - component: {fileID: -7060004241439809162}
+  - component: {fileID: -484457855667613920}
   m_Layer: 0
   m_Name: PowerUp Core Combat
   m_TagString: Untagged
@@ -31,3 +36,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &593324650143958291
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613284328911920407}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4393851543552105730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613284328911920407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333006c7c67ca4a18a58b268e60f3da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MassIncreaseEventHandler
+--- !u!114 &-3466213385642198026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613284328911920407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722927ff0138b47429dd7ae3841a4556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MassDecrease
+--- !u!114 &-7060004241439809162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613284328911920407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe677959b94848b8886238dc2d5b66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PulseRadiusEffectHandler
+  originalRadius: 1
+--- !u!114 &-484457855667613920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613284328911920407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1aaf300bab914fdf8164c0d278d12e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PushRangeEffectHandler

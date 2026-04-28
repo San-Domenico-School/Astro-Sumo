@@ -23,33 +23,39 @@ public class ReverseAttackHandler : MonoBehaviour
 {
       // Declare fields as needed    
       // Shown only as an example   
-private Vector3 originalScale;  
-private Rigidbody rigidbody;   
-private float originalmass;         
+private Rigidbody playerRB;  
+private PlayerMovement playerMovement; 
+private float originalMass;  
+private float originalMoveMagnitude;       
 
 // Needed if you need to grab additional components from the player
 // such as the rigidbody shown
 void Awake()
 {
-    originalScale = GetComponentInParent<Transform>().localScale;
-    rigidbody = GetComponentInParent<Rigidbody>();
-    originalmass= rigidbody.mass;
+    playerMovement = GetComponentInParent<PlayerMovement>();
+    playerRB = GetComponentInParent<Rigidbody>();
 }
 
-// Called when this object becomes enabled and active
-// We subscribe to the global power-up events here
+void Start()
+{
+    originalMass = playerRB.mass;
+    originalMoveMagnitude = playerMovement.moveMagnitude;
+}
+
+    // Called when this object becomes enabled and active
+    // We subscribe to the global power-up events here
 void OnEnable()
 {
-PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+    PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
+    PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
 }
 
 // Called when this object is disabled or destroyed
 // We must unsubscribe to prevent errors and unwanted behavior
 void OnDisable()
 {
-PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+    PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
+    PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
 }
 
 // Is called when the effect begins
@@ -57,22 +63,31 @@ PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
 private void ApplyEffect(PowerUpData data) 
       {
           // This prevents the player from stretching for EVERY power-up
-          if (data.powerUpName.Equals("ReverseAttack"))
+          if (data.powerUpName.Equals("Reverse Attack"))
           {
-              // Grabs the new scale from the PowerUpData file
-              // and applies it to the parent object
-              transform.parent.localScale = data.scale;
-              Debug.Log("Power-Up Applied: I'm a noodle!");
-              rigidbody.mass = data.massIncrease;
+              // Make your player very heavy but still move normal
+              playerRB.mass *= data.massIncrease;
+              playerMovement.moveMagnitude *= data.speedMultiplier;
+
+              // Change Applied Force to the opponent
+              playerMovement.appliedForce = data.reverseAttack;
+
+              Debug.Log("Power-Up Applied: Reversed Attack");
           }
       }
 
 // Is called when the effect ends
-      private void RemoveEffect(PowerUpData data) 
-      {
-          // Sets the scale back to where it was
-          transform.parent.localScale = originalScale;
-          Debug.Log("Power-Up Expired: Back to normal size.");
-          rigidbody.mass = originalmass;
-      }
+    private void RemoveEffect(PowerUpData data) 
+    {
+        if (data.powerUpName.Equals("Reverse Attack"))
+        {
+          // Set your player to orginal mass
+            playerRB.mass = originalMass;
+            playerMovement.moveMagnitude = originalMoveMagnitude;
+            playerMovement.appliedForce = 0;
+          
+            Debug.Log($"Power-Up Expired: Reversed Attack Mass: {playerRB.mass} push: {playerMovement.moveMagnitude}");
+        }
+          
+    }
 }
