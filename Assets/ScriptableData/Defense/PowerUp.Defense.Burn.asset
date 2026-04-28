@@ -17,7 +17,7 @@ MonoBehaviour:
   duration: 5
   scale: {x: 0.5, y: 1.5, z: 0.5}
   pulseRadius: 0.5
-  massIncrease: 0
+  massIncrease: 7
   massDecrease: 0
   pushRange: 0
   speedMultiplier: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
   ghostMode: 0
   burn: 1
   anchorMode: 0
-  reverseAttack: 0
+  reverseAttack: -1
   freezeNearbyPlayers: 0
   slowAll: 0
   reverseControls: 0

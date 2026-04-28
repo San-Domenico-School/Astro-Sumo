@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea978240a2984860af3cedac94b2188, type: 3}
   m_Name: PowerUp.Defense.ReverseAttack
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
-  powerUpName: ReverseAttack
+  powerUpName: Reverse Attack
   colorIndicator: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0}
-  duration: 5
+  duration: 15
   scale: {x: 0.5, y: 1.5, z: 0.5}
   pulseRadius: 0.5
-  massIncrease: 0
+  massIncrease: 3
   massDecrease: 0
   pushRange: 0
-  speedMultiplier: 1
+  speedMultiplier: 3
   stun: 1
   sizeIncreaseMultiplier: 1
   teleportToCenter: 0
@@ -29,9 +29,9 @@ MonoBehaviour:
   loseScore: 0
   collectionRange: 0
   ghostMode: 0
-  burn: 0
+  burn: 1
   anchorMode: 0
-  reverseAttack: -1
+  reverseAttack: 3
   freezeNearbyPlayers: 0
   slowAll: 0
   reverseControls: 0

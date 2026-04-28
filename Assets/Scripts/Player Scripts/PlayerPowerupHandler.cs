@@ -17,8 +17,8 @@ using UnityEngine;
 public class PlayerPowerupHandler : MonoBehaviour
 {
     // These actions act as "Radio Stations" that students can tune into
-    public static event Action<PowerUpData> OnPowerUpApplied;
-    public static event Action<PowerUpData> OnPowerUpExpired;
+    public event Action<PowerUpData> OnPowerUpApplied;
+    public event Action<PowerUpData> OnPowerUpExpired;
 
     private bool hasPowerup;
     private Light lightComponent;
