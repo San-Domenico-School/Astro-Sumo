@@ -173,6 +173,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 4591084221315823993, guid: be57aff12bba84bf8a40501466ea88cc, type: 3}
+    - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerupRate
       value: 16
       objectReference: {fileID: 0}
