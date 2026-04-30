@@ -7,6 +7,7 @@ TagManager:
   - PowerUp
   - Scoreable
   - Edge
+  - DeadZone
   layers:
   - Default
   - TransparentFX

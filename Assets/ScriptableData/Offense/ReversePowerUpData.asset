@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
   powerUpName: Reverse All Controls
   colorIndicator: {r: 0.85882354, g: 0.39607844, b: 0.015686275, a: 0}
-  duration: 3
+  duration: 10
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 0.5
   massIncrease: 0

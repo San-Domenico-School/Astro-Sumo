@@ -11,16 +11,28 @@ public class ScoreMultiplierEffectHandler : MonoBehaviour
     
 
     void OnEnable()
+{
+    // Find the specific handler on THIS player
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
     {
-        PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-        PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+        handler.OnPowerUpApplied += ApplyEffect;
+        handler.OnPowerUpExpired += RemoveEffect;
     }
+}
 
-    void OnDisable()
+void OnDisable()
+{
+    // Clean up using the same logic
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
     {
-        PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-        PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+        handler.OnPowerUpApplied -= ApplyEffect;
+        handler.OnPowerUpExpired -= RemoveEffect;
     }
+}
 
     private void ApplyEffect(PowerUpData data)
     {

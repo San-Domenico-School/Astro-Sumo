@@ -20,21 +20,26 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRB;
     
     private Vector3 moveDirection;
+    public Vector3 originalSpawnPosition {get; private set;}
 
     // Fields effeced by powerups
     [HideInInspector]
     public float moveMagnitude, linearDamping, appliedForce;
     [HideInInspector]
     public bool controlsReversed, isFrozen; 
+    [HideInInspector]
+    public int teamID;
     private bool isAtEdge;
    
     // Initializes physics references and sets default movement and physics property values.
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+        originalSpawnPosition = transform.position;
         playerRB = GetComponent<Rigidbody>();
+        teamID = GetComponent<PlayerScoreHandler>().teamID;
         moveMagnitude = 250;
         linearDamping = 0.5f;
-        playerRB.AddForce(Random.onUnitSphere * moveMagnitude, ForceMode.Force);
     }
 
     // Updates physics-based movement and checks global scores 
@@ -82,7 +87,10 @@ public class PlayerMovement : MonoBehaviour
         playerRB.AddForce(moveDirection * moveMagnitude * Time.deltaTime);
         if(transform.position.y < -10)
         {
-            Destroy(gameObject);
+            playerRB.useGravity = false;
+            
+            // Puts the player under the scene to simulate falling out of the arena, then respawns them after a short delay
+            transform.position = new Vector3(0, -10f, -3.4f);
         }
     }
 

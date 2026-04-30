@@ -7,6 +7,7 @@ public class SlowAllEffectHandler : MonoBehaviour
 private PlayerMovement playerMovement;
 private PlayerMovement[] allPlayers;
 private float originalMoveMagnitude;
+private int teamID;  
     		
 
 // Needed if you need to grab additional components from the player
@@ -19,6 +20,7 @@ void Awake()
 void Start()
 {
 	originalMoveMagnitude = playerMovement.moveMagnitude;
+    teamID = GetComponentInParent<PlayerMovement>().teamID;
 }
 
 
@@ -26,16 +28,26 @@ void Start()
 // We subscribe to the global power-up events here
 void OnEnable()
 {
-PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+    // Find the specific handler on THIS player
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
+    {
+        handler.OnPowerUpApplied += ApplyEffect;
+        handler.OnPowerUpExpired += RemoveEffect;
+    }
 }
 
-// Called when this object is disabled or destroyed
-// We must unsubscribe to prevent errors and unwanted behavior
 void OnDisable()
 {
-PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+    // Clean up using the same logic
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
+    {
+        handler.OnPowerUpApplied -= ApplyEffect;
+        handler.OnPowerUpExpired -= RemoveEffect;
+    }
 }
 
 // Is called when the effect begins
@@ -50,11 +62,12 @@ private void ApplyEffect(PowerUpData data)
             // This loop slows all players (including yours)
             foreach (PlayerMovement player in allPlayers)
             {
-                player.moveMagnitude *= data.speedMultiplier;                  
+                int playerTeamID = player.teamID;
+                if(!(playerTeamID == teamID))
+                    player.moveMagnitude *= data.speedMultiplier;                  
             }
  
               // Unslow your speed
-            playerMovement.isFrozen = !data.freezeNearbyPlayers;
             Debug.Log("Power-Up Applied: slows opponents");
 
           }

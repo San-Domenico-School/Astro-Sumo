@@ -41,18 +41,28 @@ public class StunEffectHandler : MonoBehaviour
     // Called when this object becomes enabled and active
     // We subscribe to the global power-up events here
     void OnEnable()
+{
+    // Find the specific handler on THIS player
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
     {
-        PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-        PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+        handler.OnPowerUpApplied += ApplyEffect;
+        handler.OnPowerUpExpired += RemoveEffect;
     }
+}
 
-    // Called when this object is disabled or destroyed
-    // We must unsubscribe to prevent errors and unwanted behavior
-    void OnDisable()
+void OnDisable()
+{
+    // Clean up using the same logic
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
     {
-        PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-        PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+        handler.OnPowerUpApplied -= ApplyEffect;
+        handler.OnPowerUpExpired -= RemoveEffect;
     }
+}
 
     // Is called when the effect begins
     // The PowerUpData parameter contains all configuration values

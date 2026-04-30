@@ -10,7 +10,7 @@ public class BurnEffectHandler : MonoBehaviour
       // Declare fields as needed    
       // Shown only as an example    
 private Rigidbody playerRB;   
-private ParticleSystem particleSystem;
+private ParticleSystem particles;
 private Vector3 topPosition; 
 private float originalMass;  
 
@@ -19,7 +19,7 @@ private float originalMass;
 void Awake()
 {
     playerRB = GetComponentInParent<Rigidbody>();
-    particleSystem = GetComponentInParent<ParticleSystem>();
+    particles = GetComponentInParent<ParticleSystem>();
     originalMass = playerRB.mass;
 }
 
@@ -27,16 +27,26 @@ void Awake()
 // We subscribe to the global power-up events here
 void OnEnable()
 {
-PlayerPowerupHandler.OnPowerUpApplied += ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired += RemoveEffect;
+    // Find the specific handler on THIS player
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
+    {
+        handler.OnPowerUpApplied += ApplyEffect;
+        handler.OnPowerUpExpired += RemoveEffect;
+    }
 }
 
-// Called when this object is disabled or destroyed
-// We must unsubscribe to prevent errors and unwanted behavior
 void OnDisable()
 {
-PlayerPowerupHandler.OnPowerUpApplied -= ApplyEffect;
-PlayerPowerupHandler.OnPowerUpExpired -= RemoveEffect;
+    // Clean up using the same logic
+    PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
+    
+    if (handler != null)
+    {
+        handler.OnPowerUpApplied -= ApplyEffect;
+        handler.OnPowerUpExpired -= RemoveEffect;
+    }
 }
 
 // Is called when the effect begins
@@ -53,9 +63,9 @@ private void ApplyEffect(PowerUpData data)
             playerRB.mass *= data.massIncrease;
 
             // Turns on Particle System
-            if(particleSystem != null)
+            if(particles != null)
             {
-                particleSystem.Play();
+                particles.Play();
                 Debug.Log("Particle Starts");
             }
 
@@ -75,9 +85,9 @@ private void ApplyEffect(PowerUpData data)
             CancelInvoke("MovePlayerUp");
             playerRB.useGravity = true;
             playerRB.mass = originalMass;
-            if(particleSystem != null)
+            if(particles != null)
             {
-                particleSystem.Stop();
+                particles.Stop();
             }
             Debug.Log("Power-Up Applied: I falling again");
         }

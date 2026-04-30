@@ -14,6 +14,7 @@ public class ScoreableConfig : MonoBehaviour
 {
     [SerializeField] private Color effectColor;
     public int scoreValue;
+    public bool isScored = false;
 
     void Start()
     {
