@@ -5,7 +5,8 @@ public class ReverseAllContolsEffectHandler : MonoBehaviour
       // Declare fields as needed    
       // Shown only as an example   
 private PlayerMovement playerMovement;
-private PlayerMovement[] allPlayers;    		
+private PlayerMovement[] allPlayers; 
+private int teamID;   		
 
 // Needed if you need to grab additional components from the player
 // such as the rigidbody shown
@@ -16,7 +17,11 @@ void Awake()
 
     // Called when this object becomes enabled and active
     // We subscribe to the global power-up events here
-   void OnEnable()
+void Start()
+{
+    teamID = GetComponentInParent<PlayerMovement>().teamID;
+}
+void OnEnable()
 {
     // Find the specific handler on THIS player
     PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
@@ -48,15 +53,16 @@ private void ApplyEffect(PowerUpData data)
     if (data.powerUpName.Equals("Reverse All Controls"))
     {
         allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
-        Debug.Log($"Found {allPlayers.Length} players to reverse controls for.");
 
         // This loop freezes all player controls (including yours)
         foreach (PlayerMovement player in allPlayers)
         {
-                player.controlsReversed = data.reverseControls;
+                int playerTeamID = player.teamID;
+                if(!(playerTeamID == teamID))
+                    player.controlsReversed = data.reverseControls;
         }
         
-        playerMovement.controlsReversed = !data.reverseControls;
+        //playerMovement.controlsReversed = !data.reverseControls;
         Debug.Log("Power-Up Applied: Reverse controls for all opponents!");
 
     }
