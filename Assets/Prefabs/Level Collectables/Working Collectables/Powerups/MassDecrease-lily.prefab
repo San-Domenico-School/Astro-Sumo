@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8523741854081935724}
   - component: {fileID: -7637630258467879251}
   m_Layer: 0
-  m_Name: MassDecrease-Lily
+  m_Name: MassDecrease-lily
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,6 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190d78be3bd345b98a8731f59f26664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
-  timeInScene: 9.23
+  timeInScene: 9.8
   AVPrefab: {fileID: 5535841037948806708, guid: 1c56f372cd06a48878857f71c03de22c, type: 3}
   rotation: {x: 0, y: 90, z: 0}
