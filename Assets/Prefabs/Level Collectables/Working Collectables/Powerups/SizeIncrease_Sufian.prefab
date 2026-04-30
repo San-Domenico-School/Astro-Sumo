@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8020054486406402871}
   - component: {fileID: -2196799666075914068}
   m_Layer: 0
-  m_Name: SizeIncreasde_Sufian
+  m_Name: SizeIncrease_Sufian
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,6 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190d78be3bd345b98a8731f59f26664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
-  timeInScene: 3
+  timeInScene: 10
   AVPrefab: {fileID: 0}
   rotation: {x: 0, y: 0, z: 0}

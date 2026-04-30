@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
   powerUpName: Speed Multiplier
   colorIndicator: {r: 1, g: 0, b: 0.08150673, a: 0}
-  duration: 5
+  duration: 7
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 0.5
   massIncrease: 0
