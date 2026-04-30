@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/CrackedTree.meta
+guid: 8d59d137753653f4d91329b930b943dc
+folderAsset: yes
+DefaultImporter:
+========
 guid: dc06c69dde7cf4f6a84f4e223a097eaf
 PrefabImporter:
+>>>>>>>> main:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/ReverseAllControls_Luca.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

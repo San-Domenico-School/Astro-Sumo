@@ -26,7 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/FrozenAll.prefab
+      value: -0.0038588892
+=======
       value: 0
+>>>>>>> main:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/FrozenAll_Luca.prefab
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34,11 +38,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_LocalRotation.w
+<<<<<<< HEAD:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/FrozenAll.prefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1
+=======
       value: 0.048626866
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.18443106
+>>>>>>> main:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/FrozenAll_Luca.prefab
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_LocalRotation.y
@@ -46,11 +58,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_LocalRotation.z
+<<<<<<< HEAD:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/FrozenAll.prefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+=======
       value: -0.92284995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -140.54
+>>>>>>> main:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/FrozenAll_Luca.prefab
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -66,7 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_Name
+<<<<<<< HEAD:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/FrozenAll.prefab
+      value: FrozenAll
+=======
       value: FrozenAll_Luca
+>>>>>>> main:Assets/Prefabs/Level Collectables/Working Collectables/Powerups/FrozenAll_Luca.prefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 161ebc0148ed54acaa6083577c364f79, type: 3}
       propertyPath: m_TagString
