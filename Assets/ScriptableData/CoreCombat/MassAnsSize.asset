@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
   powerUpName: MassIncrease
   colorIndicator: {r: 0, g: 0, b: 0, a: 0}
-  duration: 10
+  duration: 12
   scale: {x: 2, y: 2, z: 2}
   pulseRadius: 0.5
   massIncrease: 3

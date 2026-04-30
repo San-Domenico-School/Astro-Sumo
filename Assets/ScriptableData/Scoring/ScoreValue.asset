@@ -24,7 +24,7 @@ MonoBehaviour:
   stun: 1
   sizeIncreaseMultiplier: 1
   teleportToCenter: 0
-  scoreValue: 1000
+  scoreValue: 20
   scoreMultiplier: 1
   loseScore: 0
   collectionRange: 0

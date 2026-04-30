@@ -174,15 +174,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: maxWave
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerupRate
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: scoreableRate
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: maxPowerupTypes
@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerups.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: scoreable.Array.size
@@ -199,15 +199,15 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[0]'
       value: 
-      objectReference: {fileID: 9067531689638972524, guid: 7915959e2fc9b4741b0a1459b410a3ea, type: 3}
+      objectReference: {fileID: 2616106044112959977, guid: 5372b60867334461b929f1408276d817, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[1]'
       value: 
-      objectReference: {fileID: 135134, guid: 0eeeb7efcf3ce4725b442780e45219bc, type: 3}
+      objectReference: {fileID: 2352295156524218749, guid: 7bdf0a328c1794fa388b8f02940e8069, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[2]'
       value: 
-      objectReference: {fileID: 1192983798335586, guid: c71d573bb86b7449aadbd7a6c0225df5, type: 3}
+      objectReference: {fileID: 332048447319045558, guid: 58f497ee4f4b94851b7485a3817ec465, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[3]'
       value: 
@@ -607,7 +607,136 @@ Transform:
   m_GameObject: {fileID: 1602722640}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.12495, y: 0, z: 4.12504}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1651805210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651805212}
+  - component: {fileID: 1651805211}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1651805211
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651805210}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 81893e85a2fc247cea3338d5a64dc008, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1651805212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651805210}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.12495, y: 0.5, z: 4.12504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -905,7 +1034,7 @@ Transform:
   m_GameObject: {fileID: 2025818286}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.6}
+  m_LocalPosition: {x: -0.09, y: -0, z: -3.6}
   m_LocalScale: {x: 6.42, y: 1, z: 2.36}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -958,7 +1087,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5bc093455d9024ad1b6e4fe40d73552a, type: 2}
+  - {fileID: 2100000, guid: e4e796a310dab456991f6438fd4ea310, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1000,3 +1129,4 @@ SceneRoots:
   - {fileID: 659476251}
   - {fileID: 1454148409}
   - {fileID: 1602722644}
+  - {fileID: 1651805212}

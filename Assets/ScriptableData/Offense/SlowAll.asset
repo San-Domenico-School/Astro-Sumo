@@ -33,6 +33,6 @@ MonoBehaviour:
   anchorMode: 0
   reverseAttack: 0
   freezeNearbyPlayers: 0
-  slowAll: 50
+  slowAll: 10
   reverseControls: 0
   reverseYourControls: 0

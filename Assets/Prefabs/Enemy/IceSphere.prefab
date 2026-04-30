@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549f323a61e0e430394cf97ef6bea3c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  moveSpeed: 1.55
 --- !u!198 &2942857098453285842
 ParticleSystem:
   m_ObjectHideFlags: 0
