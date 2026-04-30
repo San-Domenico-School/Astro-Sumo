@@ -35,7 +35,7 @@ namespace ZNijjar.UI
 
             // Task 4: Set Level Clock
             int scenesRemaining = SceneManager.sceneCountInBuildSettings - GlobalEvents.SceneIndex;
-            levelTime = GlobalEvents.GameTime / scenesRemaining;
+            levelTime = GlobalEvents.GameTime / (scenesRemaining - 1);
             levelProgress.highValue = levelTime;
             levelProgress.value = levelTime;
 
