@@ -186,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerups.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: scoreable.Array.size
@@ -195,19 +195,19 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[0]'
       value: 
-      objectReference: {fileID: 6085071540223561089, guid: 9b7e25d793a9e4bbb94a205546deeca2, type: 3}
+      objectReference: {fileID: 1729945580980676, guid: 37f5c480c99f8478b80c7652132704df, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[1]'
       value: 
-      objectReference: {fileID: 7887829516342388325, guid: 6501f9b4022994051b68c811e4c19c10, type: 3}
+      objectReference: {fileID: 192068, guid: 840324f13ca284f3c9f73ca822f7e3a7, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[2]'
       value: 
-      objectReference: {fileID: 192068, guid: 840324f13ca284f3c9f73ca822f7e3a7, type: 3}
+      objectReference: {fileID: 132260, guid: 20e3dc0b472d44c899b860958dc9e2e6, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[3]'
       value: 
-      objectReference: {fileID: 1250016051351487431, guid: 76a24e6e3fa3a4ebdbfd4b2475fb42c0, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[0]'
       value: 
