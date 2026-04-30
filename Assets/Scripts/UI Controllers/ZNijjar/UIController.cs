@@ -80,6 +80,17 @@ namespace ZNijjar.UI
                 if (GlobalEvents.SceneIndex < SceneManager.sceneCountInBuildSettings)
                 {
                     SceneManager.LoadScene(GlobalEvents.SceneIndex);
+                    
+                    // Put players at start position
+                    PlayerMovement[] allPlayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+
+                    // This loop freezes all player controls except yours
+                    foreach (PlayerMovement player in allPlayers)
+                    {
+                        player.transform.position = player.originalSpawnPosition;
+                        player.GetComponent<Rigidbody>().useGravity = true; 
+                    }
+                    Debug.Log("Scene switched: " + GlobalEvents.SceneIndex);
                 }
                 else if (GlobalEvents.GameTime <= 0)
                 {
