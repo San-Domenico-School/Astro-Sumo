@@ -23,22 +23,27 @@ public class MassIncreaseEventHandler : MonoBehaviour
 {
       // Declare fields as needed    
       // Shown only as an example   
-private Vector3 originalScale;  
-private Rigidbody playerRB;   
-private float originalmass;   		
+    private Vector3 originalScale;  
+    private Rigidbody playerRB;   
+    private float originalMass;   		
 
-// Needed if you need to grab additional components from the player
-// such as the rigidbody shown
-void Awake()
-{
-	originalScale = GetComponentInParent<Transform>().localScale;
-    playerRB = GetComponentInParent<Rigidbody>();
-    originalmass=playerRB.mass;
-}
+    // Needed if you need to grab additional components from the player
+    // such as the rigidbody shown
+    void Awake()
+    {
+        originalScale = transform.parent.localScale;
+        playerRB = GetComponentInParent<Rigidbody>();
+
+    }
+
+    void Start()
+    {
+        originalMass = playerRB.mass;
+    }
 
 // Called when this object becomes enabled and active
 // We subscribe to the global power-up events here
-void OnEnable()
+    void OnEnable()
 {
     // Find the specific handler on THIS player
     PlayerPowerupHandler handler = GetComponentInParent<PlayerPowerupHandler>();
@@ -85,7 +90,7 @@ private void ApplyEffect(PowerUpData data)
           // Sets the scale back to where it was
           transform.parent.localScale = originalScale;
           Debug.Log("Power-Up Expired: Back to normal size.");
-          playerRB.mass = originalmass;
+          playerRB.mass = originalMass;
        }
     }
       
