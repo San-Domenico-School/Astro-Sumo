@@ -12,6 +12,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic; // Required for HashSet
+using UnityEngine.SceneManagement; // Required for scene loading
 
 public class PlayerJoinHandler : MonoBehaviour
 {
@@ -39,14 +40,26 @@ public class PlayerJoinHandler : MonoBehaviour
     {
         CheckKeyboardJoin();
         CheckGamepadJoin();
+        StartGame();
     }
 
+     void StartGame()
+    {
+        var keyboard = Keyboard.current;
+        if (keyboard == null) return;
+
+        if (keyboard.enterKey.wasPressedThisFrame)
+        {
+            GlobalEvents.SendSceneIndex();
+            SceneManager.LoadScene(1);
+        }
+    }
     void CheckKeyboardJoin()
     {
         var keyboard = Keyboard.current;
         if (keyboard == null || joinedDevices.Contains(keyboard)) return;
 
-        if (keyboard.spaceKey.wasPressedThisFrame || keyboard.enterKey.wasPressedThisFrame)
+        if (keyboard.spaceKey.wasPressedThisFrame)
         {
             Join(keyboard, colorKeyboard, 0);
         }
