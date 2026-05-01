@@ -31,7 +31,7 @@ public class PlayerJoinHandler : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         GlobalEvents.PlayersPerTeam = playersPerTeam;
     }
     

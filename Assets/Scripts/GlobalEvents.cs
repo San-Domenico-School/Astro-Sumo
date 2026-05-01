@@ -19,7 +19,7 @@ public static class GlobalEvents
     // This array stays in memory as long as the game is open.
     public static int[] TeamScores = new int[4]; 
     public static int PlayersPerTeam;
-    public static int GameTime = 50;             
+    public static int GameTime = 150;             
     public static int SceneIndex = 0;
 
     // 2. THE RADIO STATION (The Event)
