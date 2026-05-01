@@ -50,8 +50,8 @@ public class PlayerJoinHandler : MonoBehaviour
 
         if (keyboard.enterKey.wasPressedThisFrame)
         {
-            GlobalEvents.SendSceneIndex();
-            SceneManager.LoadScene(1);
+            StartGame startGame = GetComponent<StartGame>();
+            startGame.beginGameSequence = true;
         }
     }
     void CheckKeyboardJoin()
