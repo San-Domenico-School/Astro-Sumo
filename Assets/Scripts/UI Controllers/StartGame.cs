@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
+    [SerializeField] private int countdown = 5;
     private Label _countdownLabel;
+    private AudioSource audioSource;
     public bool beginGameSequence;
     private bool _hasStarted = false; // The gatekeeper
+    private int fontSize;
 
     void OnEnable()
     {
+        audioSource = GetComponent<AudioSource>();
         var root = GetComponent<UIDocument>().rootVisualElement;
         _countdownLabel = root.Q<Label>("CountdownLabel");
 
@@ -30,17 +34,16 @@ public class StartGame : MonoBehaviour
 
     IEnumerator CountdownSequence()
     {
-        int count = 5;
-
-       while (count > 0)
+       while (countdown > 0)
         {
-            Debug.Log("Counting: " + count);
-            _countdownLabel.text = count.ToString();
+            Debug.Log("Counting: " + countdown);
+            _countdownLabel.text = countdown.ToString();
 
             // 1. Force the size to 0 and kill the transition for a split second
             // This "resets" the animation state instantly
             _countdownLabel.style.transitionDuration = new StyleList<TimeValue>(new List<TimeValue> { new TimeValue(0) });
             _countdownLabel.style.fontSize = 0;
+            _countdownLabel.style.scale = new StyleScale(Vector2.zero);
             _countdownLabel.style.opacity = 0;
 
             // 2. WAIT ONE FRAME
@@ -51,18 +54,30 @@ public class StartGame : MonoBehaviour
             // Now Unity sees: "Oh! It's 0 and needs to be 100. Time to animate!"
             _countdownLabel.style.transitionDuration = new StyleList<TimeValue>(new List<TimeValue> { new TimeValue(0.3f, TimeUnit.Second) });
             _countdownLabel.style.fontSize = 100;
+            _countdownLabel.style.scale = new StyleScale(Vector2.one);
             _countdownLabel.style.opacity = 1;
             
             // 4. Wait for the second to pass before the next loop iteration
             yield return new WaitForSeconds(1.5f);
-            count--;
+            countdown--;
         }
 
+        fontSize = 100;
+        _countdownLabel.style.fontSize = fontSize;
         _countdownLabel.text = "GO!";
         // Keep the pop class on for "GO!"
-        yield return new WaitForSeconds(0.5f);
+        InvokeRepeating("Transition", 0, .01f);
+        yield return new WaitForSeconds(3.5f);
         BeginGame();
     }
+    
+    void Transition()
+    {
+        fontSize += 1;
+        audioSource.volume -= 0.0025f;
+        _countdownLabel.style.fontSize = fontSize;
+    }
+    
     void BeginGame()
     {
         Debug.Log("Game Started!");
