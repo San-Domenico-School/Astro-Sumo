@@ -88,8 +88,14 @@ namespace ZNijjar.UI
                     // This loop freezes all player controls except yours
                     foreach (PlayerMovement player in allPlayers)
                     {
+                        //Reset starting fields
                         player.transform.position = player.originalSpawnPosition;
                         player.GetComponent<Rigidbody>().useGravity = true; 
+                        player.moveMagnitude = 250;
+                        player.linearDamping = 0.5f;
+                        player.appliedForce = 0;
+                        player.controlsReversed = false;
+                        player.isFrozen = false; 
                     }
                     Debug.Log("Scene switched: " + GlobalEvents.SceneIndex);
                 }

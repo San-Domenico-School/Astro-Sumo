@@ -19,10 +19,10 @@ public class SpawnManager : MonoBehaviour
     private GameObject[] spawnablePowerups;
    
     [Header("Spawn Attributes")]
-    [Range(3, 30)]
+    [Range(10, 60)]
     [SerializeField] private int powerupRate;   
         
-    [Range(3, 30)]
+    [Range(10, 60)]
     [SerializeField] private int scoreableRate;   
     [SerializeField] private int maxPowerupTypes;
    
