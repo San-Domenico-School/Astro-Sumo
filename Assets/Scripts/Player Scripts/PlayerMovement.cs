@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isAtEdge;
    
     // Initializes physics references and sets default movement and physics property values.
-    void Start()
+    void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         originalSpawnPosition = transform.position;

@@ -34,6 +34,11 @@ public class SpeedMultiplierEffectHandler : MonoBehaviour
         originalMoveMagnitude = playerMovement.moveMagnitude;
     }
 
+    void Start()
+    {
+        originalMoveMagnitude = playerMovement.moveMagnitude;
+    }
+
     // Called when this object becomes enabled and active
     // We subscribe to the global power-up events here
     void OnEnable()
@@ -80,7 +85,7 @@ void OnDisable()
             if(data.powerUpName.Equals("Speed Multiplier"))
             {
                 playerMovement.moveMagnitude = originalMoveMagnitude;
-                Debug.Log("Power-Up Expired: Back to normal speed.");
+                Debug.Log($"Power-Up Expired: Back to {playerMovement.moveMagnitude} speed");
             }
             
         }

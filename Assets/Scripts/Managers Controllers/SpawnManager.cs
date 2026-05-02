@@ -14,11 +14,13 @@ public class SpawnManager : MonoBehaviour
 {
     [Header("Objects to Spawn")]
     [SerializeField] private GameObject[] powerups;
-    [SerializeField] private GameObject[] scoreable;
+    [SerializeField] private GameObject[] scoreables;
     [SerializeField] private GameObject enemy;
     private GameObject[] spawnablePowerups;
    
     [Header("Spawn Attributes")]
+    [SerializeField] private int initialPowerups;
+    [SerializeField] private int initialScoreables;
     [Range(10, 60)]
     [SerializeField] private int powerupRate;   
         
@@ -49,6 +51,7 @@ public class SpawnManager : MonoBehaviour
                 .Take(maxPowerupTypes)
                 .ToArray();
         }
+        SpawnInitialCollectables();
     }
 
     // Spawns called per fram
@@ -59,7 +62,27 @@ public class SpawnManager : MonoBehaviour
         SpawnEnemy();
     }
     
-    // Spawns a specific powerup at a specific position at powerupRate
+    // Spawns initial powerups and scoreables at a specific position
+    void SpawnInitialCollectables()
+    {
+        for(int i = 0; i < initialPowerups; i++)
+        {
+            int choiceIndex = Random.Range(0, scoreables.Length); 
+            Vector3 position = SpawnLocation();
+            Quaternion prefabRotation = scoreables[choiceIndex].transform.rotation;
+            Instantiate(spawnablePowerups[choiceIndex], position, prefabRotation); 
+        }
+
+        for(int i = 0; i < initialScoreables; i++)
+        {
+            int choiceIndex = Random.Range(0, scoreables.Length); 
+            Vector3 position = SpawnLocation();
+            Quaternion prefabRotation = scoreables[choiceIndex].transform.rotation;
+            Instantiate(scoreables[choiceIndex], position, prefabRotation); 
+        }
+    }
+
+    // Spawns specific powerups at a specific position at powerupRate
     void SpawnPowerup()
     {
         float spawnThreshold = powerupRate / 60f * Time.deltaTime;
@@ -72,16 +95,16 @@ public class SpawnManager : MonoBehaviour
         }
     }
     
-    // Spawns a specific scoreable at a specific position at scoreableRate
+    // Spawns specific scoreables at a specific position at scoreableRate
     void SpawnScoreable()
     { 
         float spawnThreshold = scoreableRate / 60f * Time.deltaTime;
-        if(Random.value < spawnThreshold && scoreable.Length > 0)
+        if(Random.value < spawnThreshold && scoreables.Length > 0)
         {
-            int choiceIndex = Random.Range(0, scoreable.Length); 
+            int choiceIndex = Random.Range(0, scoreables.Length); 
             Vector3 position = SpawnLocation();
-            Quaternion prefabRotation = scoreable[choiceIndex].transform.rotation;
-            Instantiate(scoreable[choiceIndex], position, prefabRotation); 
+            Quaternion prefabRotation = scoreables[choiceIndex].transform.rotation;
+            Instantiate(scoreables[choiceIndex], position, prefabRotation); 
         }
     }
 

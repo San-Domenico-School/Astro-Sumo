@@ -9,6 +9,10 @@ public class CollectionRangeEffectsHandler : MonoBehaviour
     void Awake()
     {
         scoreHandler = GetComponentInParent<PlayerScoreHandler>();
+    }
+
+    void Start()
+    {
         if (scoreHandler == null) return;
 
         // Find the trigger SphereCollider used for scoreable detection

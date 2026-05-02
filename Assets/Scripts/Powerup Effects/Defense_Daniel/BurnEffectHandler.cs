@@ -20,7 +20,11 @@ void Awake()
 {
     playerRB = GetComponentInParent<Rigidbody>();
     particles = GetComponentInParent<ParticleSystem>();
-    originalMass = playerRB.mass;
+}
+
+void Start()
+{
+        originalMass = playerRB.mass;
 }
 
 // Called when this object becomes enabled and active
