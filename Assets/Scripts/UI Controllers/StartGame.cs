@@ -53,7 +53,7 @@ public class StartGame : MonoBehaviour
             // 3. Turn the transition back on and set the target size
             // Now Unity sees: "Oh! It's 0 and needs to be 100. Time to animate!"
             _countdownLabel.style.transitionDuration = new StyleList<TimeValue>(new List<TimeValue> { new TimeValue(0.3f, TimeUnit.Second) });
-            _countdownLabel.style.fontSize = 100;
+            _countdownLabel.style.fontSize = 144;
             _countdownLabel.style.scale = new StyleScale(Vector2.one);
             _countdownLabel.style.opacity = 1;
             
@@ -62,7 +62,7 @@ public class StartGame : MonoBehaviour
             countdown--;
         }
 
-        fontSize = 100;
+        fontSize = 144;
         _countdownLabel.style.fontSize = fontSize;
         _countdownLabel.text = "GO!";
         // Keep the pop class on for "GO!"
