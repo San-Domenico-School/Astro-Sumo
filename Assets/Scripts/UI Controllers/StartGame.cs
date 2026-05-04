@@ -36,7 +36,6 @@ public class StartGame : MonoBehaviour
     {
        while (countdown > 0)
         {
-            Debug.Log("Counting: " + countdown);
             _countdownLabel.text = countdown.ToString();
 
             // 1. Force the size to 0 and kill the transition for a split second

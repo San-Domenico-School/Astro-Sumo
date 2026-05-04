@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PushRange
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
   powerUpName: Increase Pickup Range
-  colorIndicator: {r: 0, g: 0, b: 0, a: 0}
+  colorIndicator: {r: 0.7921569, g: 0.12941176, b: 0.67673194, a: 1}
   duration: 10
   scale: {x: 0, y: 0, z: 0}
   pulseRadius: 10

@@ -23,13 +23,21 @@ public class SizeIncreaseEffectHandler : MonoBehaviour
 {
       // Declare fields as needed    
       // Shown only as an example   
-    private Vector3 originalScale;        		
+    private Vector3 originalScale;  
+    private float originalSpeed;
+    private PlayerMovement playerMovement;      		
 
     // Needed if you need to grab additional components from the player
     // such as the rigidbody shown
     void Awake()
     {
         originalScale = GetComponentInParent<Transform>().localScale;
+        playerMovement = GetComponentInParent<PlayerMovement>();
+    }
+
+    void Start()
+    {
+        originalSpeed = playerMovement.moveMagnitude;
     }
 
     // Called when this object becomes enabled and active
@@ -68,6 +76,7 @@ void OnDisable()
                 // Grabs the new scale from the PowerUpData file
                 // and applies it to the parent object
                 transform.parent.localScale = data.scale;
+                playerMovement.moveMagnitude *= data.sizeIncreaseMultiplier;
             }
         }
 
@@ -78,6 +87,7 @@ void OnDisable()
             {
                 // Sets the scale back to where it was
                 transform.parent.localScale = originalScale;
+                originalSpeed /= data.sizeIncreaseMultiplier;
                 Debug.Log("Power-Up Expired: Back to normal size.");
             }
         }

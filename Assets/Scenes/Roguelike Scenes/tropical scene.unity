@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[1]'
       value: 
-      objectReference: {fileID: 1250016051351487431, guid: 76a24e6e3fa3a4ebdbfd4b2475fb42c0, type: 3}
+      objectReference: {fileID: 2616106044112959977, guid: 5372b60867334461b929f1408276d817, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[2]'
       value: 
