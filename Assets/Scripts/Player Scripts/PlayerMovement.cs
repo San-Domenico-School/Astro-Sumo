@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
         originalSpawnPosition = transform.position;
         playerRB = GetComponent<Rigidbody>();
         teamID = GetComponent<PlayerScoreHandler>().teamID;
-        moveMagnitude = 250;
-        linearDamping = 0.5f;
+        moveMagnitude = 750;
+        linearDamping = 2.5f;
     }
 
     // Updates physics-based movement and checks global scores 

@@ -174,19 +174,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: maxWave
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
-      propertyPath: powerupRate
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
+      propertyPath: powerupRate
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: scoreableRate
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: initialPowerups
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: maxPowerupTypes
@@ -194,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: initialScoreables
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerups.Array.size
@@ -211,19 +211,19 @@ PrefabInstance:
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[0]'
       value: 
-      objectReference: {fileID: 332048447319045558, guid: 58f497ee4f4b94851b7485a3817ec465, type: 3}
+      objectReference: {fileID: 2616106044112959977, guid: 5372b60867334461b929f1408276d817, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[1]'
       value: 
-      objectReference: {fileID: 2616106044112959977, guid: 5372b60867334461b929f1408276d817, type: 3}
+      objectReference: {fileID: 2352295156524218749, guid: 7bdf0a328c1794fa388b8f02940e8069, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[2]'
       value: 
-      objectReference: {fileID: 2352295156524218749, guid: 7bdf0a328c1794fa388b8f02940e8069, type: 3}
+      objectReference: {fileID: 332048447319045558, guid: 58f497ee4f4b94851b7485a3817ec465, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'powerups.Array.data[3]'
       value: 
-      objectReference: {fileID: 1729945580980676, guid: 8ea69227be9ae464db91682e85a415ab, type: 3}
+      objectReference: {fileID: 192068, guid: 840324f13ca284f3c9f73ca822f7e3a7, type: 3}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: 'scoreable.Array.data[0]'
       value: 

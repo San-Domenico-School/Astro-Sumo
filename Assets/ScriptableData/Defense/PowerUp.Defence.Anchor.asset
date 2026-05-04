@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpData
   powerUpName: Anchor
   colorIndicator: {r: 0, g: 0.046749115, b: 1, a: 0}
-  duration: 10
+  duration: 5
   scale: {x: 0.5, y: 1.5, z: 0.5}
   pulseRadius: 0.5
   massIncrease: 0
