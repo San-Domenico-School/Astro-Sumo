@@ -9760,7 +9760,7 @@ GameObject:
   - component: {fileID: 137638535125958091}
   - component: {fileID: -1167856645418884822}
   m_Layer: 0
-  m_Name: AV_Powerup
+  m_Name: AV_Powerup_Bad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9795,7 +9795,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c8d2aaec714ae42cab34f465de61467a, type: 3}
+  m_Resource: {fileID: 8300000, guid: f5339763ec378447f85dbb89d3925199, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

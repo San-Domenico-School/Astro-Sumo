@@ -182,7 +182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: scoreableRate
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: initialPowerups
@@ -194,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: initialScoreables
-      value: 11
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1463359335791524856, guid: e9ac3d72bc463431baa1ab39f326df86, type: 3}
       propertyPath: powerups.Array.size

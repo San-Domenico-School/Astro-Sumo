@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c699a7adf0e8444cf845a7fcea9ff5f0, type: 3}
       propertyPath: m_Name
-      value: ReverseYourControls
+      value: ReverseYourControls_Luca
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c699a7adf0e8444cf845a7fcea9ff5f0, type: 3}
       propertyPath: m_TagString
@@ -138,5 +138,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableController
   timeInScene: 30
-  AVPrefab: {fileID: 5535841037948806708, guid: 1c56f372cd06a48878857f71c03de22c, type: 3}
+  AVPrefab: {fileID: 5535841037948806708, guid: 714de8cb05900430095eae6445c5db9c, type: 3}
   rotation: {x: 0, y: 0, z: 0}
