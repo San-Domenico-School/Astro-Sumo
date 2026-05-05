@@ -56,7 +56,7 @@ public class PlayerScoreHandler : MonoBehaviour
           
             // 3. Remove the scoreable
             CollectableController collectableController = other.gameObject.GetComponent<CollectableController>();
-            collectableController.DestroyCollectable();
+            collectableController.DestroyCollectable(true); // Always plays audio
         }
     }
 }

@@ -36,16 +36,20 @@ public class PlayerPowerupHandler : MonoBehaviour
     {
         if (other.CompareTag("PowerUp"))
         {
+            CollectableController collectableController = other.gameObject.GetComponent<CollectableController>();
             if(!hasPowerup)
             {
                 PowerUpConfig config = other.GetComponent<PowerUpConfig>();
                 if (config != null && config.data != null)
                 {
+                    collectableController.DestroyCollectable(true); // Plays audio
                     StartCoroutine(PowerUpRoutine(config.data));
                 }
+            }  
+            else 
+            {
+                collectableController.DestroyCollectable(false); // Doesn't play audio
             }
-            CollectableController collectableController = other.gameObject.GetComponent<CollectableController>();
-            collectableController.DestroyCollectable();
         }
     }
 
