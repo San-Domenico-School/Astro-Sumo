@@ -156,7 +156,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 2
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -4921,6 +4921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScoreableConfig
   effectColor: {r: 1, g: 0.8490552, b: 0.2783019, a: 0}
   scoreValue: 25
+  isScored: 0
 --- !u!114 &1484069327412630693
 MonoBehaviour:
   m_ObjectHideFlags: 0
