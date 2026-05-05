@@ -32,10 +32,17 @@ public class CollectableController : MonoBehaviour
         transform.Rotate(rotation);
     }
 
-    public void DestroyCollectable()
+    public void DestroyCollectable(bool hasPowerUp)
     {
-        StopCoroutine("PowerUpTimeout");
-        HandlePickup();
+        // Instantiate AVPrefab
+        if (AVPrefab != null && hasPowerUp)
+        {
+            // Create the sound in the scene at the current object's position
+            Instantiate(AVPrefab, transform.position, Quaternion.identity);
+        }
+
+        // Final Cleanup (This will always run)
+        Destroy(gameObject);
     }
 
     //Destroys the game object after the alloted time as passed.
@@ -45,16 +52,4 @@ public class CollectableController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void HandlePickup()
-    {
-        // Instantiate AVPrefab
-        if (AVPrefab != null)
-        {
-            // Create the sound in the scene at the current object's position
-            Instantiate(AVPrefab, transform.position, Quaternion.identity);
-        }
-
-        // Final Cleanup (This will always run)
-        Destroy(gameObject);
-    }
 }
