@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Roguelike Scenes/tropical scene.unity
     guid: 25171fa60b5cd497088dd08d85dd37b5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Roguelike Scenes/SnowySlopes.unity
     guid: eabb16ec921fd4267b30de3d46f217b2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Roguelike Scenes/Jungle_Scene.unity
     guid: a32570167dbaf4e99aa51bd1ad1ea2e9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Roguelike Scenes/Farm Scene.unity
     guid: 87e33d4453e27490b806337d86d5ef25
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Roguelike Scenes/Volcano_Scene.unity
     guid: 4673717b3088e4956959943150cb85c6
   - enabled: 1
